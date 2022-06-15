@@ -5,11 +5,17 @@ html{
     position:fixed;
     top: 0;
     left: 0;
-    background-color: rgb(204, 201, 201);
+    background-color: rgb(235, 225, 225);
     border: 2px solid rgb(105, 102, 102);
     width: calc(100% - 4px);
     height: 60px;
     z-index: 99;
+}
+.logo{
+    width: 102px;
+    height: 60px;
+    z-index: 1;
+    cursor: pointer;
 }
 .video{
     position:absolute;

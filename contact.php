@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,28 +11,8 @@
 </head>
 <body>
     <div class="menu-container">
-    <img src="./assets/logo.png" onclick="redirect('Contact')" class="logo">    
+    <img src="./assets/logo.png" onclick="redirect('Home')" class="logo">    
 
     </div>
-
-    <div class="video">
-    </div>
-
-    <div class="author-container">
-        <div class="author-row">
-            <div class="author-column">
-
-            </div>
-        </div>
-    </div>
-    <section class="products">
-        <div class="box-container">
-
-        </div>
-    </section>
-    
-    <div class="contacto">
-
-</div>
 </body>
 </html>
