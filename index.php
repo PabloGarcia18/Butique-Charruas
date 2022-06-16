@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +7,21 @@
     <title>Butique</title>
     <link rel="icon" type="image/x-icon" href="./assets/logo.ico">
     <link rel="stylesheet" href="css/index.css">
-    <script type = "text/javascript" src="./js/General-Functions.js"></script>
+    <script type = "text/javascript" src="js/General-Functions.js"></script>
 </head>
 <body>
     <div class="menu-container">
-    <img src="./assets/logo.png" onclick="redirect('Contact')" class="logo">    
-
+    <img src="./assets/logo.png" onclick="redirect('Contact')" class="logo"> 
+    <img src="./assets/User.png" class="perfil" onclick="redirect('Usuario')"></img>
+    <img src="./assets/basket.png" class="carro"></img>
     </div>
-
-    <div class="video">
+    
+    <div class="intro-container">
+        <video muted autoplay loop>
+            <source src="./assets/Intro.mp4" 
+            type="video/mp4">
+        </video>
     </div>
-
     <div class="author-container">
         <div class="author-row">
             <div class="author-column">
