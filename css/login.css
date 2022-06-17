@@ -1,0 +1,103 @@
+.login-container{
+    position:absolute;
+    display: grid;
+    top: calc(72px + 28%);
+    left: 50%;
+    transform: translate(-50%);
+    width: 300px;
+    height: 180px;
+}
+.label{
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #b3b3b3;
+}
+.user-input{
+    padding: 0.8rem;
+    width: 100%;
+    height: 18px;
+    border: 2px solid #2f2c45;
+    background: #272530;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: #fff;
+}
+.user-input:focus{
+    border: 2px solid #7e4ccb;
+}
+.user-input:focus + .label, .filled{
+    top: -10px;
+    color: #7e4ccb;
+    font-size: 14px;
+}
+.user-input::placeholder{
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.user-input:focus::placeholder{
+    opacity: 1;
+}
+.label::before{
+    content: "";
+    height: 5px;
+    background: #272530;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+.password-input{
+    padding: 0.8rem;
+    width: 100%;
+    height: 18px;
+    border: 2px solid #2f2c45;
+    background: #272530;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: #fff;
+}
+.pass-label{
+    position: absolute;
+    left: 10px;
+    top: 85px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #b3b3b3; 
+}
+.password-input:focus{
+    border: 2px solid #7e4ccb;
+}
+.password-input:focus + .pass-label, .filled{
+    top: 58px;
+    color: #7e4ccb;
+    font-size: 14px;
+}
+.password-input::placeholder{
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.password-input:focus::placeholder{
+    opacity: 1;
+}
+.pass-label::before{
+    content: "";
+    height: 5px;
+    background: #272530;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
