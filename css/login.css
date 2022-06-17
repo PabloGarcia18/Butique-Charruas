@@ -31,7 +31,7 @@
 .user-input:focus{
     border: 2px solid #7e4ccb;
 }
-.user-input:focus + .label, .filled{
+.user-input:focus + .label, .filled2{
     top: -10px;
     color: #7e4ccb;
     font-size: 14px;
@@ -54,6 +54,7 @@
     width: 100%;
     z-index: -1;
 }
+
 .password-input{
     padding: 0.8rem;
     width: 100%;

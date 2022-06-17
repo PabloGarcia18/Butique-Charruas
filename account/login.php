@@ -22,7 +22,7 @@
                 id="username"
                 class="user-input"
                 autocomplete="off"
-                placeholder="Ingrese su Usuario"
+                placeholder="Ingrese su usuario"
                 required
                 />
                 <label class="label" for="username">Usuario</label>
@@ -33,7 +33,7 @@
             id="password"
             class="password-input" 
             autocomplete="off"
-            placeholder="Ingrese su Contraseña"
+            placeholder="Ingrese su contraseña"
             required
             />
             <label class="pass-label" for="password">Contraseña</label>
