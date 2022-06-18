@@ -8,14 +8,16 @@
     <link rel="icon" type="image/x-icon" href="./assets/logo.ico">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/home.css">
-    <script type = "text/javascript" src="js/General-Functions.js"></script>
 </head>
 <body>
-    <div class="menu-container">
-    <img src="./assets/logo.png" onclick="redirect('Contact')" class="logo"> 
-    <img src="./assets/User.png" class="perfil" onclick="redirect('Usuario')"></img>
-    <img src="./assets/basket.png" class="carro"></img>
-    </div>
+    <nav>
+        <img src="./assets/logo.png" onclick="redirect('Contact')" class="logo"> 
+        <img src="./assets/User_gold.png" class="perfil_gold" onclick="redirect('Usuario')"></img>
+        <img src="./assets/User_white.png" class="perfil_white" onclick="redirect('Usuario')"></img>
+        <img src="./assets/basket_gold.png" class="carro_gold"></img>
+        <img src="./assets/basket_white.png" class="carro_white"></img>
+        
+    </nav>
     
     <div class="intro-container">
         <video muted autoplay loop>
@@ -40,4 +42,6 @@
 
 </div>
 </body>
+<script type = "text/javascript" src="js/General-Functions.js"></script>
+
 </html>

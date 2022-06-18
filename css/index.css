@@ -1,14 +1,25 @@
+@keyframes hideopacity {
+    0% { opacity: 1}
+    100% { opacity: 0}
+  }
 html{
     background-color: rgba(16, 1, 21, 0.89);
 }
-.menu-container{
-    position:fixed;
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(235, 225, 225);
-    width: 100%;
     height: 72px;
-    z-index: 99; 
+    width: 100%;
+    z-index: 99;
+    transition: all ease-in-out .7s;
+}
+nav.scrolled{
+    background: whitesmoke;
+    box-shadow: 5px -1px 12px -5px grey;
+    opacity: 1;
 }
 .logo{
     position: absolute;
@@ -19,26 +30,22 @@ html{
     left: 0;
     cursor: pointer;
 }
-.carro{
+.carro_white, .carro_gold{
     position: absolute;
     right: 5%;
-    top: 10px;
-    width: 42px;
-    height: 42px;
-    /*background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(134, 125, 125);
-    border-radius: 360px;*/
-    z-index: 99; 
+    top: 15px;
+    width: 38px;
+    height: 38px;
+    z-index: 99;
+    transition: all ease-in-out .7s;
 }
-.perfil{
+.perfil_white, .perfil_gold{
     position: absolute;
     right: 10%;
-    top: 10px;
-    width: 42px;
-    height: 42px;
-    /*background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(134, 125, 125);
-    border-radius: 360px;*/
+    top: 15px;
+    width: 38px;
+    height: 38px;
     z-index: 99;
     cursor: pointer;
+    transition: all ease-in-out .7s;
 }

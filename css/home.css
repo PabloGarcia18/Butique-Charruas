@@ -1,8 +1,8 @@
 .intro-container{
     position: absolute;
-    top: 63px;
+    top: 0;
     left: 0;
-    height: 560px;
+    height: 623px;
     width: 100%;
 }
 video{
@@ -11,7 +11,7 @@ video{
     top: 0;
     z-index: -1;
     width: 100%;
-    height: 560px;
+    height: 623px;
     object-fit: cover;
 }
 .author-container{
