@@ -14,23 +14,22 @@
     <div class="menu-container">
     <img src="../assets/logo.png" onclick="redirect('Home')" class="logo">    
     </div>
-
-    <div class="login-container">
+    <form method="POST" action="../db.php" class="login-container">
         <div class="username-container">
             <input
                 type="text" 
-                id="username"
+                name="username"
                 class="user-input"
                 autocomplete="off"
                 placeholder="Ingrese su usuario"
                 required
-                />
-                <label class="label" for="username">Usuario</label>
+            />
+            <label class="label" for="username">Usuario</label>
         </div>
         <div class="password-container">
             <input 
             type="password" 
-            id="password"
+            name="password"
             class="password-input" 
             autocomplete="off"
             placeholder="Ingrese su contraseña"
@@ -39,7 +38,7 @@
             <label class="pass-label" for="password">Contraseña</label>
         </div>
         <button>Logearse</button>
-    </div>
+    </form>
 </body>
 <script type = "text/javascript" src="../js/login.js"></script>
 </html>
