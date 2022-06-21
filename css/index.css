@@ -2,8 +2,23 @@
     0% { opacity: 1}
     100% { opacity: 0}
   }
+body::-webkit-scrollbar {
+    width: 0.5em;
+  }
+   
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+body::-webkit-scrollbar-thumb {
+    background-color: whitesmoke;
+    outline: 1px solid rgb(157, 166, 175);
+  }
 html{
-    background-color: rgba(16, 1, 21, 0.89);
+    /* background-image: url(../assets/background.jpg);*/
+    background-color: rgb(72, 5, 32);
+    background-size:auto;
+    background-position: center;
 }
 nav {
     position: -webkit-sticky;

@@ -11,10 +11,12 @@
     <script type = "text/javascript" src="../js/General-Functions.js"></script>
 </head>
 <body>
-    <div class="menu-container">
+    <nav>
     <img src="../assets/logo.png" onclick="redirect('Home')" class="logo">    
-    </div>
-    <form method="POST" action="../db.php" class="login-container">
+    <img src="../assets/User_gold.png" class="perfil_gold" onclick="redirect('Usuario')"></img>
+    <img src="../assets/basket_gold.png" class="carro_gold"></img>
+    </nav>
+    <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="login-container">
         <div class="username-container">
             <input
                 type="text" 
@@ -42,3 +44,49 @@
 </body>
 <script type = "text/javascript" src="../js/login.js"></script>
 </html>
+
+<?php
+$accounts = array(
+
+    1 => array(
+        'username' => 'Pablo18',
+        'email' => 'PabloGarcia18@gmail.com',
+        'password' => '12345'
+
+    ),
+    2 => array(
+        'username' => 'KatyM',
+        'email' => 'KatyMagallanes@gmail.com',
+        'password' => '43215'
+    ),
+    3 => array(
+        'username' => 'Crhist',
+        'email' => 'Crhistian@gmail.com',
+        'password' => '3216'
+    )
+);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $usernamefound = FALSE;
+    
+    
+    foreach ($accounts as $account) {
+        if ($account['username'] == $_POST['username']) {
+            if ($account['password'] == $_POST['password']) {
+                echo "<script>
+                redirect('Home')
+                </script>";
+            } else {
+                echo "<script> alert('Contraseña invalida')</script>";
+            }
+            $usernamefound = TRUE;
+            break;
+        }
+    }
+    if ($usernamefound === FALSE) {
+        echo "<script> alert('Usuario invalido')</script>";
+    }
+}
+?>

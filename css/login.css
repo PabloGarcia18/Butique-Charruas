@@ -7,6 +7,19 @@
     width: 300px;
     height: 180px;
 }
+nav{
+    position: -webkit-sticky;
+    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 72px;
+    width: 100%;
+    z-index: 99;
+    background: whitesmoke;
+    box-shadow: 5px -1px 12px -5px grey;
+    opacity: 1;
+}
 .label{
     position: absolute;
     left: 10px;
