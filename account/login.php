@@ -1,22 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Butique</title>
-    <link rel="icon" type="image/x-icon" href="../assets/logo.ico">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <script type = "text/javascript" src="../js/General-Functions.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <nav>
-    <img src="../assets/logo.png" onclick="redirect('Home')" class="logo">    
-    <img src="../assets/User_gold.png" class="perfil_gold" onclick="redirect('Usuario')"></img>
-    <img src="../assets/basket_gold.png" class="carro_gold"></img>
-    </nav>
-    <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="login-container">
+    <div id="login-leave" class="hidden" onclick="exitlogin()"></div>
+    <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" id="login-container" class="hidden">
+       
         <div class="username-container">
             <input
                 type="text" 
@@ -25,6 +16,7 @@
                 autocomplete="off"
                 placeholder="Ingrese su usuario"
                 required
+                value="usuario"
             />
             <label class="label" for="username">Usuario</label>
         </div>
@@ -35,6 +27,7 @@
             class="password-input" 
             autocomplete="off"
             placeholder="Ingrese su contraseña"
+            value="password"
             required
             />
             <label class="pass-label" for="password">Contraseña</label>

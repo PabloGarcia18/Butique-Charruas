@@ -1,24 +1,35 @@
-.login-container{
-    position:absolute;
+body.pause {
+    height: 100%;
+    overflow: hidden;
+    transition: all ease-in-out .7s;
+  }
+.hidden {
+    display: none;
+  }
+#login-container{
+    position:fixed;
     display: grid;
-    top: calc(72px + 28%);
+    top: -500px;
     left: 50%;
     transform: translate(-50%);
-    width: 300px;
+    z-index: 99;
+    width: 500px;
+    border: 2px solid #272530;
+    background: rgb(39, 4, 84);
     height: 180px;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all ease-in-out .7s;
 }
-nav{
-    position: -webkit-sticky;
-    position: sticky;
+#login-leave{
     position: fixed;
     top: 0;
     left: 0;
-    height: 72px;
     width: 100%;
-    z-index: 99;
-    background: whitesmoke;
-    box-shadow: 5px -1px 12px -5px grey;
-    opacity: 1;
+    height: 100%;
+    z-index: 98;
+    transition: all ease-in-out .7s;
 }
 .label{
     position: absolute;
@@ -31,7 +42,7 @@ nav{
 }
 .user-input{
     padding: 0.8rem;
-    width: 100%;
+    width: 94%;
     height: 18px;
     border: 2px solid #2f2c45;
     background: #272530;
@@ -39,6 +50,7 @@ nav{
     font-size: 18px;
     outline: none;
     transition: all 0.3s;
+    content: "";
     color: #fff;
 }
 .user-input:focus{
@@ -70,7 +82,7 @@ nav{
 
 .password-input{
     padding: 0.8rem;
-    width: 100%;
+    width: 94%;
     height: 18px;
     border: 2px solid #2f2c45;
     background: #272530;

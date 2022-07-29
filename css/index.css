@@ -1,7 +1,9 @@
-@keyframes hideopacity {
-    0% { opacity: 1}
-    100% { opacity: 0}
-  }
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 body::-webkit-scrollbar {
     width: 0.5em;
   }
@@ -24,11 +26,13 @@ nav {
     position: -webkit-sticky;
     position: sticky;
     position: fixed;
+    display: inline-flex;
     top: 0;
     left: 0;
-    height: 72px;
+    height: 52px;
     width: 100%;
     z-index: 99;
+    justify-content: center;
     transition: all ease-in-out .7s;
 }
 nav.scrolled{
@@ -36,31 +40,74 @@ nav.scrolled{
     box-shadow: 5px -1px 12px -5px grey;
     opacity: 1;
 }
-.logo{
-    position: absolute;
-    top: 4px;
-    width: 102px;
-    height: 60px;
-    z-index: 99; 
-    left: 0;
-    cursor: pointer;
-}
 .carro_white, .carro_gold{
     position: absolute;
-    right: 5%;
-    top: 15px;
-    width: 38px;
-    height: 38px;
+    right: 2rem;
+    top: 8px;
+    width: 30px;
+    height: 30px;
     z-index: 99;
     transition: all ease-in-out .7s;
 }
 .perfil_white, .perfil_gold{
     position: absolute;
-    right: 10%;
-    top: 15px;
-    width: 38px;
-    height: 38px;
+    right: 6rem;
+    top: 8px;
+    width: 30px;
+    height: 30px;
     z-index: 99;
     cursor: pointer;
     transition: all ease-in-out .7s;
+}
+.nav-logo{
+  opacity: 0;
+  width: 107px;
+  height: 56px;
+  transition: all ease-in-out .5s;
+}
+nav p{
+  padding: 0;
+  margin: 0; 
+  line-height: 52px;
+  opacity: 0;
+  transition: all ease-in-out .5s;
+  cursor: pointer;
+  font-family: 'Prestage';
+  font-size: 1.3rem;
+}
+.nav-contacto, .nav-vinos, .nav-expe, .nav-nosotros, .nav-logo{
+  position: relative;
+  top: -700px;
+  color: goldenrod;
+}
+.nav-contacto{
+  padding-right: 30px;
+}
+.nav-vinos{
+  padding-right: 30px;
+}
+@media only screen and (max-width: 500px) {
+  .carro_white, .carro_gold{
+    position: absolute;
+    right: 1.5rem;
+  }
+  .perfil_white, .perfil_gold{
+    position: absolute;
+    right: 4rem;
+  }
+  nav {
+    background: whitesmoke;
+    box-shadow: 5px -1px 12px -5px grey;
+    transition: all ease-in-out .7s;
+  }
+  .perfil_white, .carro_white{
+    opacity: 0;
+    z-index: -25;
+  }
+  nav p{
+    display: none;
+  }
+  .nav-logo{
+    display: none;
+  }
 }
