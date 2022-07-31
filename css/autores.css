@@ -1,4 +1,13 @@
-.row-1, .row-2, .row-3{
+.fila1{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+}
+
+
+/*.row-1, .row-2, .row-3{
     position: relative;
     width: 619px;
     grid-area: auto;
@@ -23,7 +32,6 @@
     font-family: 'Neutra-Text';
 }
 .row-1-info h1,.row-2-info h1, .row-3-info h1{
-    /*margin-left: 0.8rem;*/
     font-family: 'Brandon-Grotesque-Italic';
     font-size: 2.5rem;
     font-weight: 500;
@@ -54,4 +62,4 @@
         top: 240px;
         left: 15px;
     }
-}
+}*/

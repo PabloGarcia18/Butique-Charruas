@@ -5,25 +5,24 @@ function redirect(a){
         location.replace("http://127.0.0.1/Butique-Charruas/Index.php");
     } else if (a === "Usuario") {
         var login_exit = document.getElementById('login-leave');
-        var login = document.getElementById('login-container');
+        var login = document.querySelector('.login-cont');
         var body = document.querySelector('body');
         body.classList.add('pause');
         login.classList.remove('hidden'); 
         login_exit.classList.remove('hidden'); 
-        //login.style.animation = "showopaccity 0.7s"
-        login.style.top = "30%";
+        login.style.left = "25vw";
     } else if (a === "Carro"){
         location.replace("http://127.0.0.1/Butique-Charruas/Checkout.php");
     }
 }
 function exitlogin(){
   var login_exit = document.getElementById('login-leave');
-  var login = document.getElementById('login-container');
+  var login = document.querySelector('.login-cont');
   var body = document.querySelector('body');
   
   body.classList.remove('pause');
   login.style.animation = "hideopacity 0.7s";
-  login.style.top = "-700px";
+  login.style.left = "-100vw";
   login.classList.add('hidden'); 
   login_exit.classList.add('hidden');
 }

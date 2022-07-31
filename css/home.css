@@ -18,21 +18,6 @@ video{
     height: 100%;
     object-fit: cover;
 }
-.author-container{
-    position: relative;
-    display: inline-grid;
-    width: 100%;
-    top: 20px;
-    margin-bottom: 35px;
-    grid-template-columns: repeat(2, 0.36fr);
-    grid-gap: 15px;
-    justify-items: center;
-    justify-content: center;
-    /*transform: translate(-50%);
-    left: 50%;
-    background-color: rgb(204, 201, 201);*/
-}
-
 .products{
     position: relative;
     display: grid;
@@ -55,7 +40,98 @@ video{
     margin-top: 30px;
 }
 
-@media only screen and (max-width: 500px) {
+
+#cont_regiones
+{
+    position:relative;
+    width:100%;
+    height:auto;
+    display:grid;
+    grid-template-columns: repeat(2,35vw);
+    grid-template-rows: auto;
+    grid-gap:20px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.cont_region_unite
+{
+    width: 100%;
+    height: 25vw;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+}
+#cont_regiones div:nth-of-type(1) div:nth-of-type(1){
+    height: 220px;
+}
+#cont_regiones div div p{
+    padding-right: 55px;
+}
+#cont_regiones div:nth-of-type(1) div:nth-of-type(1) span:nth-of-type(1)
+{
+    width:100%;
+    height: 25vw;
+    margin-left: 0;
+    background-color: transparent;
+    display: flex;
+    font-family: 'Neutra-Text';
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+#cont_regiones div:nth-of-type(2) div:nth-of-type(1) 
+{
+    background-image: url("../assets/Wine3.jpg");
+    background-size: contain;
+    background-size: 40% 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+#cont_regiones div:nth-of-type(2) div:nth-of-type(2) 
+{
+    background-image: url("../assets/Valle4.jpg");
+    background-size: contain;
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+#cont_regiones div:nth-of-type(1) div:nth-of-type(2) 
+{
+    background-image: url("../assets/Wine4.jpg");
+    background-size: contain;
+    background-size: 40% 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+#cont_regiones div div span
+{
+    width:60%;
+    height: 25vw;
+    background: white;
+    margin-left: 40%;
+    display: flex;
+    font-family: 'Neutra-Text';
+    flex-direction: column;
+    padding: 25px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+#cont_regiones div div span hr
+{
+    width: 85%;
+    color: grey;
+    margin-left: 0;
+}
+@media only screen and (max-width: 800px) {
     video{
         top: 52px;
         height: 50vh;
@@ -71,4 +147,33 @@ video{
     .contacto{
         top: calc(1550px);
     }
-  }
+    #cont_regiones{
+    position:relative;
+    width:100%;
+    height:50%;
+    display:grid;
+    grid-template-columns:90vw;
+    grid-template-rows: auto;
+    grid-gap:20px;
+    justify-items: center;
+    justify-content: center;
+    }
+    .cont_region_unite{
+    height: 90vw;
+    }
+    #cont_regiones div div span{
+    width:60%;
+    height: 90vw;
+    background: white;
+    margin-left: 40%;
+    display: flex;
+    font-family: 'Neutra-Text';
+    flex-direction: column;
+    padding: 25px;
+    text-align: left;
+    font-size: 3vw;
+    }
+    #cont_regiones div:nth-of-type(1) div:nth-of-type(1) span:nth-of-type(1){
+    font-size: 2.5vw;
+    }
+    }

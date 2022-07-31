@@ -18,7 +18,7 @@ body::-webkit-scrollbar-thumb {
   }
 html{
     /* background-image: url(../assets/background.jpg);*/
-    background-color: rgb(72, 5, 32);
+    background-color: whitesmoke;
     background-size:auto;
     background-position: center;
 }
@@ -85,6 +85,24 @@ nav p{
 }
 .nav-vinos{
   padding-right: 30px;
+}
+.intro-text{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  display: inline-flex;
+  top: 231px;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Brandon-Grotesque";
+  font-weight: 300;
+  font-size: 1.1vw;
+}
+.intro-text h1{
+  margin: 0;
+  font-weight: 100;
 }
 @media only screen and (max-width: 500px) {
   .carro_white, .carro_gold{

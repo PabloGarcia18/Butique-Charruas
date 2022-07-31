@@ -5,38 +5,61 @@
     <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <div id="login-leave" class="hidden" onclick="exitlogin()"></div>
-    <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" id="login-container" class="hidden">
-       
-        <div class="username-container">
-            <input
-                type="text" 
-                name="username"
-                class="user-input"
-                autocomplete="off"
-                placeholder="Ingrese su usuario"
-                required
-                value="usuario"
-            />
-            <label class="label" for="username">Usuario</label>
-        </div>
-        <div class="password-container">
-            <input 
-            type="password" 
-            name="password"
-            class="password-input" 
-            autocomplete="off"
-            placeholder="Ingrese su contraseña"
-            value="password"
-            required
-            />
-            <label class="pass-label" for="password">Contraseña</label>
-        </div>
-        <button>Logearse</button>
-    </form>
+    <div id="login-leave" class="hidden" onclick="exitlogin()"></div>    
+    <section class="login-cont">
+        <section class="login-back">
+            
+        </section>
+        <section class="login-form">
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                <div class="username-container">
+                    <input
+                        type="text" 
+                        name="username"
+                        class="user-input"
+                        autocomplete="off"
+                        placeholder="Ingrese su usuario"
+                        required
+                    />
+                </div>
+                <div class="password-container">
+                    <input 
+                    type="password" 
+                    name="password"
+                    class="password-input" 
+                    autocomplete="off"
+                    placeholder="Ingrese su contraseña"
+                    required
+                    />
+                </div>
+                <button>Ingresar</button>
+            </form>
+        </section>
+    
+        <button class="btn-login">Logearse</button>
+        <button class="btn-register">Registrarse</button>
+    </section>
 </body>
 <script type = "text/javascript" src="../js/login.js"></script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php
 $accounts = array(
