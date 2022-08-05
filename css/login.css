@@ -15,12 +15,8 @@
         background-image: url(../assets/wine2.jpg);
     }
 }
-body.pause {
-    height: 100%;
-    overflow: hidden;
-    transition: all ease-in-out .7s;
-  }
 .hidden {
+    transition: all ease-in-out 0.5s;
     display: none;
   }
 .login-cont{

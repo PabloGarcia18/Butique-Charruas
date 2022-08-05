@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Butique</title>
+    <title>Boutique</title>
     <!-- Boostrap 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
@@ -23,42 +23,59 @@
     <div>
     <!-- Menu -->
         <nav>
-            <p class="nav-contacto">Contacto</p>    
-            <p class="nav-nosotros">Nosotros</p>
-            <img src="./assets/logo.png" class="nav-logo">
-            <p class="nav-vinos">Vinos</p>
-            <p class="nav-expe">Experiencias</p>
-            <img src="./assets/User_gold.png" class="perfil_gold" onclick="redirect('Usuario')"></img>
+            <p class="nav-contacto" style="display: none">Contacto</p>    
+            <p class="nav-nosotros" style="display: none">Nosotros</p>
+            <img src="./assets/logo.png" class="nav-logo" style="display: none">
+            <p class="nav-vinos" style="display: none">Vinos</p>
+            <p class="nav-expe" style="display: none">Experiencias</p>
+            <img src="./assets/flecha.png" class="arrow" onclick="redirect('Scroll')">
             <img src="./assets/User_white.png" class="perfil_white" onclick="redirect('Usuario')"></img>
-            <img src="./assets/basket_gold.png" class="carro_gold"></img>
             <img src="./assets/basket_white.png" class="carro_white"></img>
+            <!--<img src="./assets/User_white.png" class="perfil_gold" style="right: 5rem; left: unset;" onclick="redirect('Usuario')"></img>
+            <img src="./assets/User_white.png" class="perfil_white" onclick="redirect('Usuario')"></img>
+            <img src="./assets/basket_white.png" class="carro_gold" style="right: 2rem; left: unset;"></img>
+            <img src="./assets/basket_white.png" class="carro_white"></img>-->
         </nav>
     </div>
     <div>
         <!-- Video -->
         <section class="intro-container">
-            <video muted autoplay loop style="filter: brightness(0.7);">
+            <video muted autoplay loop style="filter: brightness(0.7);" id="intro1">
                 <source src="./assets/Intro2.mp4" 
                 type="video/mp4">
             </video>
+            <video muted pause loop style="display: none;" class="hidden" id="intro2">
+                <source src="./assets/Intro.mp4" 
+                type="video/mp4">
+            </video>
             <span class="intro-text">
-                <p>Bienvenido a Butique de Vinos Charruas</p>
+                <p>Bienvenido a Boutique de Vinos Charruas</p>
                 <h1>DONDE NUESTRA ESPECIALIDAD SON LOS VINOS</h1>
             </span>
+            <!-- Slider -->
+            <section class="slider-check">
+                <!-- Boton 1 Intro Inicial -->
+                <button 
+                    id="v1" 
+                    onclick="slider(1)" 
+                    style="
+                    border: solid 2.5px whitesmoke;
+                    background-color: whitesmoke;"
+                >
+                </button>
+                <!-- Boton 2 Intro Secundaria -->
+                <button id="v2"
+                    onclick="slider(2)" 
+                    style="
+                    border: solid 2.5px whitesmoke;
+                    background-color: #867d8f;"
+                >
+                </button>
+            </section>
         </section>
     </div>
     <div>
-
-
-        <!-- Contenido 
-        <div class="fila1">
-            <section class="Peninsula">
-                <span>
-                    En el corazón de la Cordillera de Los Andes, Mendoza es la principal provincia vitivinícola de Argentina. En esta tierra del Malbec, los aromas y sabores auténticos de la gastronomía local se conjugan en armonía con destacados vinos.
-                </span>
-            </section>
-        </div>-->
-
+        <!-- Regiones -->
         <section id="cont_regiones">
             <div class="col_regiones">
                 <div>
@@ -105,9 +122,47 @@
 
         <!-- Productos -->
     <div>
+        <section class="product-title">
+            <h1>Elecciones Recomendadas</h1>
+            <hr>
+        </section>
         <section class="products">
-            <div class="box-container">
-            </div>
+            <section class="vino">
+                <div> 
+
+                </div>
+                <h1 class="P-Name">Vino 1</h1> <!-- Cargar Nombre de la SQL -->
+                <hr>
+                <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
+                <p class="price">$ 25.99</p> <!-- Cargar Precio de la SQL -->
+            </section>
+            <section class="vino">
+                <div> 
+
+                </div>
+                <h1 class="P-Name">Vino 2</h1> <!-- Cargar Nombre de la SQL -->
+                <hr>
+                <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
+                <p class="price">$ 35.99</p> <!-- Cargar Precio de la SQL -->
+            </section>
+            <section class="vino">
+                <div> 
+
+                </div>
+                <h1 class="P-Name">Vino 3</h1> <!-- Cargar Nombre de la SQL -->
+                <hr>
+                <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
+                <p class="price">$ 12.99</p> <!-- Cargar Precio de la SQL -->
+            </section>
+            <section class="vino">
+                <div> 
+
+                </div>
+                <h1 class="P-Name">Vino 1</h1> <!-- Cargar Nombre de la SQL -->
+                <hr>
+                <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
+                <p class="price">$ 25.99</p> <!-- Cargar Precio de la SQL -->
+            </section>
         </section>
     </div>
     <div class="contacto">
@@ -119,4 +174,5 @@
     </div>
 </body>
 <script type = "text/javascript" src="js/General-Functions.js"></script>
+<script type = "text/javascript" src="js/slider.js"></script>
 </html>

@@ -28,30 +28,49 @@ nav {
     position: fixed;
     display: inline-flex;
     top: 0;
-    left: 0;
+    background: black;
+    left: 93%;
+    border-radius: 0 0 0 15px;
     height: 52px;
-    width: 100%;
+    width: 7%;
     z-index: 99;
     justify-content: center;
-    transition: all ease-in-out .7s;
+    transition: all cubic-bezier(0.39, 0.58, 0.57, 1) .7s;
 }
 nav.scrolled{
-    background: whitesmoke;
+    background: rgb(0, 0, 0);
     box-shadow: 5px -1px 12px -5px grey;
     opacity: 1;
+    width: 100%;
+    left:0;
+    border-radius: unset;
 }
-.carro_white, .carro_gold{
+.arrow{
+  position: absolute;
+  right: 5.8rem;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  z-index: 99;
+  cursor: pointer;
+  transition: all ease-in-out .7s;
+}
+.arrow:hover, .perfil_white:hover, .carro_white:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.carro_white{
     position: absolute;
-    right: 2rem;
+    right: 0.8rem;
     top: 8px;
     width: 30px;
     height: 30px;
     z-index: 99;
     transition: all ease-in-out .7s;
 }
-.perfil_white, .perfil_gold{
+.perfil_white{
     position: absolute;
-    right: 6rem;
+    right: 3.5rem;
     top: 8px;
     width: 30px;
     height: 30px;
@@ -77,8 +96,7 @@ nav p{
 }
 .nav-contacto, .nav-vinos, .nav-expe, .nav-nosotros, .nav-logo{
   position: relative;
-  top: -700px;
-  color: goldenrod;
+  color: whitesmoke;
 }
 .nav-contacto{
   padding-right: 30px;
@@ -86,37 +104,19 @@ nav p{
 .nav-vinos{
   padding-right: 30px;
 }
-.intro-text{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color: whitesmoke;
-  display: inline-flex;
-  top: 231px;
-  text-align: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: "Brandon-Grotesque";
-  font-weight: 300;
-  font-size: 1.1vw;
-}
-.intro-text h1{
-  margin: 0;
-  font-weight: 100;
-}
 @media only screen and (max-width: 500px) {
-  .carro_white, .carro_gold{
+  .carro_white{
     position: absolute;
     right: 1.5rem;
   }
-  .perfil_white, .perfil_gold{
+  .perfil_white{
     position: absolute;
     right: 4rem;
   }
   nav {
     background: whitesmoke;
     box-shadow: 5px -1px 12px -5px grey;
-    transition: all ease-in-out .7s;
+    transition: all ease-in-out 1.7s;
   }
   .perfil_white, .carro_white{
     opacity: 0;
