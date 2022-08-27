@@ -50,9 +50,27 @@
 .login-form{
     background-color: white;
     position: relative;
+    display: inline-flex;
     width: 100%;
     height: 100%;
     border-radius: 0 15px 15px 0;
+    justify-content: center;
+}
+.login-form input{
+    height: 29px;
+}
+.username-container{
+    position: relative;
+    top: calc(35% - 8px);
+}
+.password-container{
+    position: relative;
+    top: 35%;
+}
+.btn-action-login, .btn-action-register{
+    position: relative;
+    top: 36%;
+    left: 30%;
 }
 .btn-register{
     top: calc(55vw * 0.2 + 45px);

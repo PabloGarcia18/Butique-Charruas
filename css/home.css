@@ -156,10 +156,13 @@ video{
     position: relative;
     display: grid;
     height: auto;
-    width: 80vw;
-    left: 10vw;
+    width: 100%;
+    /* left: 10vw; */
     grid-template-columns: repeat(4,20vw);
-    padding-left: 30px;
+    /* padding-left: 30px; */
+    justify-items: center;
+    /* grid-gap: 2rem; */
+    justify-content: center;
 
 }
 .product-title{
@@ -176,7 +179,7 @@ video{
 }
 .vino{
     position: relative;
-    width: 310px;
+    width: calc(15rem + 0.5vw);
     height: 400px;
     border: solid 1px gray;
     border-radius: 15px;
@@ -251,7 +254,20 @@ video{
     height: 215px;
     margin-top: 30px;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 500px) {
+    .intro-container{
+        top: 0;
+        left: 0;
+        height: 95vw;
+    }
+    .intro-text{
+        font-size: 3vw;
+        top: 163px;
+    }
+    .slider-check{
+        position: absolute;
+        right:1.5rem;
+    }
     video{
         top: 52px;
         height: 50vh;
@@ -296,4 +312,4 @@ video{
     #cont_regiones div:nth-of-type(1) div:nth-of-type(1) span:nth-of-type(1){
     font-size: 2.5vw;
     }
-    }
+}

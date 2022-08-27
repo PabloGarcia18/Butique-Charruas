@@ -1,3 +1,44 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Si ya esta Logeado lo redirije 
+if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true){
+    echo "Bienvenido";
+}
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $array_dataset = 
+        [
+            "user" => $_POST["username"],
+            "pass" => $_POST["password"],
+        ];
+    // Validate credentials
+        // Prepare a select statement
+        $sql = "SELECT idusuario, mail, password FROM usuarios WHERE mail ="."'".$array_dataset["user"]."'";
+        
+        $data = $conn->query($sql)->fetchAll();
+
+        $log_validate = false;
+        foreach ($data as $row)         //recorro toda la consulta, o sea, cada uno de los items que traiga de la tabla en la bd
+        {
+            /*escucho coincidencia en usuario y pass*/
+            if(strcmp($row['mail'], $array_dataset["user"])==0 && strcmp($row['password'], $array_dataset["pass"])==0){$log_validate = true;}
+        }
+
+        /*estimo resultado de consulta login*/
+        if($log_validate == true)
+        {
+
+            $_SESSION["logeado"] = true;
+            $_SESSION["username"] = $username;                            
+            
+            //echo "credenciales válidas";
+        }else 
+        {
+            echo "<script>alert('Contraseña o Mail Invalido');</script>";
+        } 
+}
+?>
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="./css/login.css">
@@ -11,14 +52,14 @@
             
         </section>
         <section class="login-form">
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">>
                 <div class="username-container">
                     <input
                         type="text" 
                         name="username"
                         class="user-input"
                         autocomplete="off"
-                        placeholder="Ingrese su usuario"
+                        placeholder="Ingrese su mail"
                         required
                     />
                 </div>
@@ -32,7 +73,7 @@
                     required
                     />
                 </div>
-                <button>Ingresar</button>
+                <button class="btn-action-login">Ingresar</button>
             </form>
         </section>
     
@@ -40,69 +81,4 @@
         <button class="btn-register">Registrarse</button>
     </section>
 </body>
-<script type = "text/javascript" src="../js/login.js"></script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-$accounts = array(
-
-    1 => array(
-        'username' => 'Pablo18',
-        'email' => 'PabloGarcia18@gmail.com',
-        'password' => '12345'
-
-    ),
-    2 => array(
-        'username' => 'KatyM',
-        'email' => 'KatyMagallanes@gmail.com',
-        'password' => '43215'
-    ),
-    3 => array(
-        'username' => 'Crhist',
-        'email' => 'Crhistian@gmail.com',
-        'password' => '3216'
-    )
-);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $usernamefound = FALSE;
-    
-    
-    foreach ($accounts as $account) {
-        if ($account['username'] == $_POST['username']) {
-            if ($account['password'] == $_POST['password']) {
-                echo "<script>
-                redirect('Home')
-                </script>";
-            } else {
-                echo "<script> alert('Contraseña invalida')</script>";
-            }
-            $usernamefound = TRUE;
-            break;
-        }
-    }
-    if ($usernamefound === FALSE) {
-        echo "<script> alert('Usuario invalido')</script>";
-    }
-}
-?>

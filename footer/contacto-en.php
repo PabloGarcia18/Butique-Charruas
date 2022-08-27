@@ -10,33 +10,33 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-col">
-                        <h4>Empresa</h4>
+                        <h4>Company</h4>
                         <ul>
-                            <li><a href="#">Sobre Nosotros</a></li>
-                            <li><a href="#">Nuestros Servicios</a></li>
-                            <li><a href="#">Política De Privacidad</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Our services</a></li>
+                            <li><a href="#">Privacy policy</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Ayuda</h4>
                         <ul>
-                            <li><a href="#">Preguntas Más Frecuentes</a></li>
-                            <li><a href="#">Envío</a></li>
-                            <li><a href="#">Devoluciones</a></li>
-                            <li><a href="#">Estado Del Pedido</a></li>
-                            <li><a href="#">Opciones De Pago</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Shipment</a></li>
+                            <li><a href="#">Refunds</a></li>
+                            <li><a href="#">Order Status</a></li>
+                            <li><a href="#">Payment Options</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Tienda Online</h4>
+                        <h4>Online store</h4>
                         <ul>
-                            <li><a href="#">Experiencias</a></li>
-                            <li><a href="#">Elecciones Recomendadas</a></li>
-                            <li><a href="#">Reservas Premium</a></li>
+                            <li><a href="#">Experiences</a></li>
+                            <li><a href="#">Recommended Selections</a></li>
+                            <li><a href="#">Premium Reservations</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Siguenos</h4>
+                        <h4>Follow us</h4>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-facebook-f" style="line-height: unset; font-size: 29;"></i></a>
                             <a href="#"><i class="fab fa-twitter" style="line-height: unset; font-size: 29;"></i></a>
