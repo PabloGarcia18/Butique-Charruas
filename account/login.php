@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
         </section>
         <section class="login-form">
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">>
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
                 <div class="username-container">
                     <input
                         type="text" 
@@ -76,7 +76,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <button class="btn-action-login">Ingresar</button>
             </form>
         </section>
-    
+        <section class="register" style="display: none;">
+                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="reg-username">
+                        <input 
+                            type="text" 
+                            name="mail"
+                            class="mail-input"
+                            autocomplete="off"
+                            placeholder="Ingrese su mail"
+                            required
+                        />
+                    </div>
+            
+                </form>
+        </section>
         <button class="btn-login">Logearse</button>
         <button class="btn-register">Registrarse</button>
     </section>
