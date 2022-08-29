@@ -1,18 +1,18 @@
 @keyframes carrusel{
     10%{
-        background-image: url(../assets/Wine3.jpg);
+        background-image: url(../assets/fondos/Wine3.jpg);
     }
     30%{
-        background-image: url(../assets/valle.jpg);
+        background-image: url(../assets/fondos/valle.jpg);
     }
     55%{
-        background-image: url(../assets/Wine.jpg);
+        background-image: url(../assets/fondos/Wine.jpg);
     }
     70%{
-        background-image: url(../assets/wine3.jpg);
+        background-image: url(../assets/fondos/wine3.jpg);
     }
     100%{
-        background-image: url(../assets/wine2.jpg);
+        background-image: url(../assets/fondos/wine2.jpg);
     }
 }
 .hidden {
@@ -38,7 +38,7 @@
     display: flex;
     width: 40vw;
     height: 100%;
-    background-image: url(../assets/Wine2.jpg);
+    background-image: url(../assets/fondos/Wine2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 200% 130%;

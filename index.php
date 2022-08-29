@@ -23,12 +23,12 @@
         <nav>
             <p class="nav-contacto" style="display: none">Contacto</p>    
             <p class="nav-nosotros" style="display: none">Nosotros</p>
-            <img src="./assets/logo.png" class="nav-logo" style="display: none">
+            <img src="./assets/iconos/logo.png" class="nav-logo" style="display: none">
             <p class="nav-vinos" style="display: none">Vinos</p>
             <p class="nav-expe" style="display: none">Experiencias</p>
-            <img src="./assets/flecha.png" class="arrow" onclick="redirect('Scroll')">
-            <img src="./assets/User_white.png" class="perfil_white" onclick="redirect('Usuario')"></img>
-            <img src="./assets/basket_white.png" class="carro_white"></img>
+            <img src="./assets/iconos/flecha.png" class="arrow" onclick="redirect('Scroll')">
+            <img src="./assets/iconos/User_white.png" class="perfil_white" onclick="redirect('Usuario')"></img>
+            <img src="./assets/iconos/basket_white.png" class="carro_white"></img>
             <!--<img src="./assets/User_white.png" class="perfil_gold" style="right: 5rem; left: unset;" onclick="redirect('Usuario')"></img>
             <img src="./assets/User_white.png" class="perfil_white" onclick="redirect('Usuario')"></img>
             <img src="./assets/basket_white.png" class="carro_gold" style="right: 2rem; left: unset;"></img>
@@ -39,11 +39,11 @@
         <!-- Video -->
         <section class="intro-container">
             <video muted autoplay loop style="filter: brightness(0.7);" id="intro1">
-                <source src="./assets/Intro2.mp4" 
+                <source src="./assets/videos/Intro2.mp4" 
                 type="video/mp4">
             </video>
             <video muted pause loop style="display: none;" class="hidden" id="intro2">
-                <source src="./assets/Intro.mp4" 
+                <source src="./assets/videos/Intro.mp4" 
                 type="video/mp4">
             </video>
             <span class="intro-text">
