@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         ];
     // Validate credentials
         // Prepare a select statement
-        $sql = "SELECT idusuario, mail, password FROM usuarios WHERE mail ="."'".$array_dataset["user"]."'";
+        $sql = "SELECT idusuario, mail, password, tipousuario FROM usuarios WHERE mail ="."'".$array_dataset["user"]."'";
         
         $data = $conn->query($sql)->fetchAll();
 
@@ -22,6 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         foreach ($data as $row)         //recorro toda la consulta, o sea, cada uno de los items que traiga de la tabla en la bd
         {
             /*escucho coincidencia en usuario y pass*/
+            $usuariosql = $row["tipousuario"];
             if(strcmp($row['mail'], $array_dataset["user"])==0 && strcmp($row['password'], $array_dataset["pass"])==0){$log_validate = true;}
         }
 
@@ -30,7 +31,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         {
 
             $_SESSION["logeado"] = true;
-            $_SESSION["username"] = $username;                            
+            $_SESSION["username"] = $username;
+            $_SESSION["tipouser"] = $usuariosql;                 
             
             //echo "credenciales válidas";
         }else 
