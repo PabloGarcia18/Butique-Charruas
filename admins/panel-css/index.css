@@ -12,7 +12,6 @@
     margin: 0;
     padding: 0;
     top: 10px;
-
 }
 .iconos li{
     list-style: none;
@@ -31,16 +30,25 @@
 }
 .iconos i:hover{
     cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    transform: scale(1.1);
 }
 .lateral{
     position: absolute;
     top: 0;
     left: 0;
     border-right: solid 2px lightslategray;
-    background-color: rgb(43, 0, 0);
+    background-color: rgb(56, 0, 0);
     width: 90px;
     height: 100%;
 }
+
+
+
+
+
+
+
 
 /* Tooltip */
 
@@ -48,6 +56,7 @@
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
+  transition: all ease-in-out 0.5s;
 }
 
 .tooltip .tooltiptext {

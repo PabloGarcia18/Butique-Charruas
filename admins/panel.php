@@ -26,5 +26,19 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
     include('acciones.php');
     include('../services/conexion.php');
     ?>
+
+    <section class="interaccion">
+
+    </section>
 </body>
 </html>
+<style>
+.interaccion{
+    position: relative;
+    top: 35px;
+    left: 135px;
+    width: 90vw;
+    height: 80vh;
+    border: 1px solid;
+}
+</style>
