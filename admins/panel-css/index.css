@@ -1,0 +1,69 @@
+.logo{
+    position: relative;
+    width: 89px;
+    height: 56px;
+}
+.iconos{
+    text-align: center;
+}
+.iconos ul{
+    position: relative;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    top: 10px;
+
+}
+.iconos li{
+    list-style: none;
+    margin-top: 8px;
+}
+.iconos i{
+    position: relative;
+    border-radius: 360px;
+    border: solid 1px whitesmoke;
+    width: 38px;
+    color: whitesmoke;
+    height: 36px;
+    line-height: 35px;
+    font-size: 20px;
+    text-align: center;
+}
+.iconos i:hover{
+    cursor: pointer;
+}
+.lateral{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: solid 2px lightslategray;
+    background-color: rgb(43, 0, 0);
+    width: 90px;
+    height: 100%;
+}
+
+/* Tooltip */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
