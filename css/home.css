@@ -294,10 +294,13 @@ video{
         width: 10vw;
     }
     .products{
-        top: calc(910px);
-    }
-    .contacto{
-        top: calc(1550px);
+        position: relative;
+        display: grid;
+        grid-template-columns: 90vw;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+        justify-items: center;
+        justify-content: center;
     }
     #cont_regiones{
     position:relative;
@@ -326,6 +329,22 @@ video{
     font-size: 3vw;
     }
     #cont_regiones div:nth-of-type(1) div:nth-of-type(1) span:nth-of-type(1){
-    font-size: 2.5vw;
+    font-size: unset;
+    width: calc(100% - 25px);
+    height: auto;
+    display: flex;
+    font-family: 'Neutra-Text';
+    flex-direction: column;
+    padding: 0;
+    padding-left: 25px;
+    margin: 0;
+    text-align: center;
+    }
+    #cont_regiones div:nth-of-type(1) div:nth-of-type(1) {
+        margin-top: 30px;
+        height: unset;
+    }
+    #cont_regiones div:nth-of-type(1) div:nth-of-type(2) {
+        margin-bottom: unset;
     }
 }

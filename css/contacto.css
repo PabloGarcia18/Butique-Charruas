@@ -92,4 +92,7 @@ ul{
         width: 50%;
         margin-bottom: 30px;
     }
+    .footer{
+        padding: 70px 0 0 15px;
+    }
 }
