@@ -1,7 +1,8 @@
 <?php
         /*Carga sql*/
             include('./services/conexion.php');
-            include('./account/login.php')
+            include('./account/login.php');
+            include('./header/nav.php');
         ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,21 +20,6 @@
 <body>
     <div>
     <!-- Menu -->
-        <span id="insertHere"></span>
-        <nav>
-            <p class="nav-contacto" style="display: none">Contacto</p>    
-            <p class="nav-nosotros" style="display: none">Nosotros</p>
-            <img src="./assets/iconos/logo.png" class="nav-logo" style="display: none">
-            <p class="nav-vinos" style="display: none">Vinos</p>
-            <p class="nav-expe" style="display: none">Experiencias</p>
-            <img src="./assets/iconos/flecha.png" class="arrow" onclick="redirect('Scroll')">
-            <img src="./assets/iconos/User_white.png" class="perfil_white" onclick="redirect('Usuario')"></img>
-            <img src="./assets/iconos/basket_white.png" class="carro_white"></img>
-            <!--<img src="./assets/User_white.png" class="perfil_gold" style="right: 5rem; left: unset;" onclick="redirect('Usuario')"></img>
-            <img src="./assets/User_white.png" class="perfil_white" onclick="redirect('Usuario')"></img>
-            <img src="./assets/basket_white.png" class="carro_gold" style="right: 2rem; left: unset;"></img>
-            <img src="./assets/basket_white.png" class="carro_white"></img>-->
-        </nav>
     </div>
     <div>
         <!-- Video -->

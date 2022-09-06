@@ -44,6 +44,14 @@
                             <a href="#"><i class="fab fa-linkedin-in" style="line-height: unset; font-size: 29;"></i></a>
                         </div>
                     </div>
+                    <div class="footer-col">
+                        <ul>
+                            <li><a>Español</a></li>
+                            <li><a>Ingles</a></li>
+                            
+                            
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

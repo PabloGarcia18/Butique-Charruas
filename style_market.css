@@ -1,0 +1,96 @@
+#contenedor_market
+{
+    position: relative;
+    display: grid;
+    width: 90vw;
+    height: 80vh;
+    margin-left: 5vw;
+    margin-top: 10vh;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 80vh;
+    background: #333;
+}
+
+.celda_market
+{
+    background: #e3e3e3;
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw;
+    grid-template-rows: 15vw 15vw;
+    grid-gap: 5px;
+    justify-content: center;
+    align-content: center;
+}
+
+.celda_market section 
+{
+    border: 1px solid #333;
+    text-align: center;
+    font-family: monospace;
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+.celda_market section p 
+{
+    font-size: 0.7vw;
+}
+
+.celda_carrito 
+{
+    position: relative;
+}
+
+.celda_carrito button 
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: none;
+    color: #333;
+    background: white;
+    font-family:monospace;
+    height: 30px;
+    width: 200px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.celda_carrito button:hover 
+{
+    transition: all ease 2s;
+    border: 1px solid #333;
+}
+
+.celda_carrito
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.celda_carrito h1, .celda_carrito p
+{
+    color: white;
+    font-family:monospace;
+    font-size: 1vw;
+}
+
+.celda_carrito p 
+{
+    font-size:0.7vw;
+}
+
+#carrito_content 
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+#carrito_content p 
+{
+    padding: 0 50px 0 50px;
+}

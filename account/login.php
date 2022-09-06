@@ -1,60 +1,23 @@
 <?php
 // Initialize the session
 session_start();
- 
 // Si ya esta Logeado lo redirije 
-if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true){
-    echo "Bienvenido";
-}
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $array_dataset = 
-        [
-            "user" => $_POST["username"],
-            "pass" => $_POST["password"],
-        ];
-    // Validate credentials
-        // Prepare a select statement
-        $sql = "SELECT idusuario, mail, password, tipousuario FROM usuarios WHERE mail ="."'".$array_dataset["user"]."'";
-        
-        $data = $conn->query($sql)->fetchAll();
-
-        $log_validate = false;
-        foreach ($data as $row)         //recorro toda la consulta, o sea, cada uno de los items que traiga de la tabla en la bd
-        {
-            /*escucho coincidencia en usuario y pass*/
-            $usuariosql = $row["tipousuario"];
-            if(strcmp($row['mail'], $array_dataset["user"])==0 && strcmp($row['password'], $array_dataset["pass"])==0){$log_validate = true;}
-        }
-
-        /*estimo resultado de consulta login*/
-        if($log_validate == true)
-        {
-
-            $_SESSION["logeado"] = true;
-            $_SESSION["username"] = $username;
-            $_SESSION["tipouser"] = $usuariosql;                 
-            
-            //echo "credenciales válidas";
-        }else 
-        {
-            echo "<script>alert('Contraseña o Mail Invalido');</script>";
-        } 
-}
 ?>
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/animations.css">
+    <script type = "text/javascript" src="./js/accounts.js"></script>
 </head>
 <body>
-    <div id="login-leave" class="hidden" onclick="exitlogin()"></div>    
+    <div id="login-leave" class="hidden" onclick="exitlogin();"></div>    
     <section class="login-cont">
         <section class="login-back">
             
         </section>
-        <section class="login-form">
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
+        <section class="login-form" id="login">
+            <form method="POST" enctype="multipart/form-data" id="form_fetch_login">
                 <div class="username-container">
                     <input
                         type="text" 
@@ -75,26 +38,47 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     required
                     />
                 </div>
-                <button class="btn-action-login">Ingresar</button>
+                <button class="btn-action-login" onclick="fetch_login();">Ingresar</button>
             </form>
         </section>
-        <section class="register" style="display: none;">
-                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                    <div class="reg-username">
-                        <input 
-                            type="text" 
-                            name="mail"
-                            class="mail-input"
-                            autocomplete="off"
-                            placeholder="Ingrese su mail"
-                            required
-                        />
-                    </div>
-            
-                </form>
+        <section class="register-form" style="display: none;" id="register">
+            <form method="POST" id="form_fetch_register">
+                <div class="reg-username">
+                    <input 
+                        type="text" 
+                        name="mail"
+                        class="mail-input"
+                        autocomplete="off"
+                        placeholder="Ingrese su mail"
+                        required
+                    />
+                </div>
+                <div class="reg-password">
+                    <input 
+                        type="password" 
+                        name="reg-pass"
+                        class="regpass-input"
+                        autocomplete="off"
+                        placeholder="Ingrese su contraseña"
+                        required
+                    />
+                </div>
+                <div class="reg-confirm-pass">
+                    <input 
+                        type="password" 
+                        name="reg-pass2"
+                        class="regpass-input"
+                        autocomplete="off"
+                        placeholder="Confirme su contraseña"
+                        required
+                    />
+                </div>
+                <button class="btn-action-login" onclick="fetch_register();">Registrarse</button>
+            </form>
         </section>
-        <button class="btn-login">Logearse</button>
-        <button class="btn-register">Registrarse</button>
+        
+        <button class="btn-login" onclick="showlogin();">Logearse</button>
+        <button class="btn-register" onclick="showreg();">Registrarse</button>
     </section>
 </body>
 </html>

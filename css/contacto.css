@@ -79,6 +79,9 @@ ul{
     background-color: #ffffff;
 }
 
+.idiomas{
+    color: pink;
+}
 /*respensive*/
 
 @media (max-width: 767px) {
