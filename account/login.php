@@ -1,8 +1,3 @@
-<?php
-// Initialize the session
-session_start();
-// Si ya esta Logeado lo redirije 
-?>
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="./css/login.css">

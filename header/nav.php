@@ -1,3 +1,6 @@
+<?php 
+    session_start();    
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,10 +29,10 @@
             <img src="./assets/iconos/User_white.png" class="perfil_white" 
             
             <?php 
-            if($_SESSION["logeado"])
-            {
+            if(!empty($_SESSION['logeado'])){
                 echo "onclick=\"alert('Usted ya esta logeado');\"";
-            }else{
+            }
+            else{
                 echo "onclick=\"redirect('Usuario');\"";
             }
             

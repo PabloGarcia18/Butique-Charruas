@@ -24,14 +24,13 @@
         /*estimo resultado de consulta login*/
         if($log_validate == true)
         {
-
             $_SESSION["logeado"] = true;
             $_SESSION["username"] = $username;
             $_SESSION["tipouser"] = $usuariosql;                 
             
-            echo "credenciales válidas";
+            echo "Credenciales válidas";
         }else 
         {
-            echo "Contraseña o Mail Invalido" . $_SESSION["type"];
+            echo "Contraseña o Mail Invalido";
         }
 ?>
