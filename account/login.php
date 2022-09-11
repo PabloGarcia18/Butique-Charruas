@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/cuentas.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/animations.css">
     <script type = "text/javascript" src="./js/accounts.js"></script>
@@ -8,6 +8,7 @@
 <body>
     <div id="login-leave" class="hidden" onclick="exitlogin();"></div>    
     <section class="login-cont">
+        <i onclick="exitlogin();" id="cerrar" class="fa-solid fa-xmark"></i>
         <section class="login-back">
             
         </section>

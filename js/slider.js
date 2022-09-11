@@ -6,17 +6,15 @@ function slider(c){
     
     if (c == 1){
         if (btn1.style.backgroundColor == "whitesmoke"){
-            console.log("Esta en este slider!");
+            //console.log("Esta en este slider!");
         }else{
-            console.log("No esta en el Slider!");
+           //console.log("No esta en el Slider!");
             btn1.style.backgroundColor = "whitesmoke";
             btn2.style.backgroundColor = "#867d8f";
             btn1.style.cursor = "default";
             btn2.style.cursor = "pointer";
             intro1.style.display = "unset";
             intro2.style.display = "none";
-            //intro1.classList.remove('hidden');
-            //intro2.classList.add('hidden');
             intro1.play();
             intro1.currentTime = 0;
             intro2.pause();
@@ -24,17 +22,15 @@ function slider(c){
         }
     }else{
         if (btn2.style.backgroundColor == "whitesmoke"){
-            console.log("Esta en este slider!");
+            //console.log("Esta en este slider!");
         }else{
-            console.log("No esta en el Slider!");
+            //console.log("No esta en el Slider!");
             btn1.style.backgroundColor = "#867d8f";
             btn2.style.backgroundColor = "whitesmoke";
             btn1.style.cursor = "pointer";
             btn2.style.cursor = "default";
             intro1.style.display = "none";
             intro2.style.display = "unset";
-            //intro1.classList.add('hidden');
-            //intro2.classList.remove('hidden');
             intro2.play();
             intro2.currentTime = 0;
             intro1.pause();

@@ -11,7 +11,6 @@
     <title>Boutique</title>
     <link rel="icon" type="image/x-icon" href="./assets/logo.png">
     <link rel="stylesheet" href="./css/fonts.css">
-    <link rel="stylesheet" href="./css/animations.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/home.css">
 </head>

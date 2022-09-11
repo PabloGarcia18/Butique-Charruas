@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="./css/autores.css">
         <link rel="stylesheet" href="css/fonts.css">
-        <link rel="stylesheet" href="css/animations.css">
     </head>
     <body>
         <section class="fila1">
