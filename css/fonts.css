@@ -50,3 +50,15 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+    font-family: 'Biryani';
+    src: url('../assets/fonts/Biryani-Regular.eot');
+    src: url('../assets/fonts/Biryani-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Biryani-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Biryani-Regular.woff') format('woff'),
+        url('../assets/fonts/Biryani-Regular.ttf') format('truetype'),
+        url('../assets/fonts/Biryani-Regular.svg#Biryani-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

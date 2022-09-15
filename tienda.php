@@ -1,8 +1,8 @@
 <?php
         /*Carga sql*/
-            include('./services/conexion.php');
-            include('./header/nav.php');
-            include('./account/login.php');
+            include('services/conexion.php');
+            include('header/nav-2.php');
+            include('account/login.php');
         ?>
 
 <!DOCTYPE html>
@@ -11,9 +11,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script_shop_loaded.js"></script>
-    <script src="script_carrito_charger.js"></script>
-    <link rel="stylesheet" href="style_market.css">
+    <script src="store/script_shop_loaded.js"></script>
+    <script src="store/script_carrito_charger.js"></script>
+    <link rel="stylesheet" href="store/style_market.css">
 </head>
 <body>
     <div id="contenedor_market">
@@ -30,7 +30,7 @@
         <!-- Pie de Pagina -->
         <?php
         /*Carga el html de contacto*/
-            include('./footer/contacto.php');
+            include('footer/contacto.php');
         ?>
     </div>
 </body>

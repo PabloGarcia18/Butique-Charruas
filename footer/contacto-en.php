@@ -3,7 +3,6 @@
         <link rel="stylesheet" href="./css/contacto.css">
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/animations.css">
-        <script src="https://kit.fontawesome.com/11fdbcd7e6.js" crossorigin="anonymous"></script>
     </head>
     <div class="cont">
         <div class="footer">

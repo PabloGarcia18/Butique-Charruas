@@ -1,7 +1,7 @@
 <?php
 
     // connect to the bookdb database
-    include("services/conexion.php");
+    include("../services/conexion.php");
 
     $id = $_POST['id'];
     $cantidad = 0;

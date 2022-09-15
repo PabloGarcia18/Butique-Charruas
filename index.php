@@ -2,12 +2,13 @@
         /*Carga sql*/
             include('./services/conexion.php');
             include('./account/login.php');
-            include('./header/nav.php');
+            include('./header/nav-2.php');
         ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/11fdbcd7e6.js" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique</title>
@@ -114,7 +115,7 @@
                 <div> 
 
                 </div>
-                <h1 class="P-Name">Vino 1</h1> <!-- Cargar Nombre de la SQL -->
+                <h1 class="P-Name">Varselle del Uco</h1> <!-- Cargar Nombre de la SQL -->
                 <hr>
                 <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
                 <p class="price">$ 25.99</p> <!-- Cargar Precio de la SQL -->
