@@ -1,5 +1,20 @@
 var state = false;
 
+function timeda(){
+    var tring = document.getElementById('tring-cart');
+    var cont = document.getElementById('cont-cart');
+
+    cont.style.opacity = "1";
+    tring.style.opacity = "1"; 
+}
+
+function timedb(){
+    var tring = document.getElementById('tring-cart');
+    var cont = document.getElementById('cont-cart');
+    cont.style.display = "none";
+    tring.style.display = "none";
+}
+
 function redirect(a){
     if (a === "Contact") {
         location.replace("http://127.0.0.1/Butique-Charruas/contact.php");
@@ -18,12 +33,12 @@ function redirect(a){
             state = true;
             cont.style.display = "unset";
             tring.style.display = "unset";
-            
+            setTimeout(timeda, 200);
         }else{
             state = false;
-            cont.style.display = "none";
-            tring.style.display = "none";
-            
+            cont.style.opacity = "0";
+            tring.style.opacity = "0";
+            setTimeout(timedb, 500);
         }
         
     } else if (a === "tienda"){

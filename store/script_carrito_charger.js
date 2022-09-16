@@ -2,7 +2,7 @@ let map_productos_carrito = new Map();
 
 function carrito_charger(id, nombre, precio)
 {
-    const carrito = document.querySelector("#carrito_content");
+    const carrito = document.querySelector("#cont-cart");
     carrito.innerHTML += "<p>producto: " + nombre + ". cantidad: 1. precio: " + precio + "</p>";
     let nuevo_producto = 
     {

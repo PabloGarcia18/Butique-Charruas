@@ -16,15 +16,15 @@
     <div>
     <!-- Menu -->
         <nav>
-            <p class="nav-vinos" onclick="redirect('tienda')">Vinos</p>
-            <p class="nav-expe" onclick="redirect('experiencias')">Experiencias</p>    
+            <p class="nav-vinos" onclick="redirect('tienda')">Wines</p>
+            <p class="nav-expe" onclick="redirect('experiencias')">Experiencies</p>    
             <img src="./assets/iconos/logo.png" class="nav-logo" onclick="redirect('Home')">
-            <p class="nav-contacto" onclick="redirect('contacto')">Contacto</p>    
-            <p class="nav-nosotros" onclick="redirect('nosotros')">Nosotros</p>
+            <p class="nav-contacto" onclick="redirect('contacto')">Contact</p>    
+            <p class="nav-nosotros" onclick="redirect('nosotros')">About us</p>
             <i class="far fa-user" id="perfil"
             <?php 
             if(!empty($_SESSION['logeado'])){
-                echo "onclick=\"alert('Usted ya esta logeado');\"";
+                echo "onclick=\"alert('You are loged');\"";
             }
             else{
                 echo "onclick=\"redirect('Usuario');\"";
@@ -34,7 +34,7 @@
             <i class="fa-solid fa-cart-shopping" id="carro" onclick="redirect('Carro')"></i>
 
         </nav>
-        <div id="tring-cart" style="display: none; opacity: 0;"></div>
+        <div id="tring-cart" style="display: none;"></div>
         
-        <div id="cont-cart" style="display: none; opacity: 0;"></div>
+        <div id="cont-cart" style="display: none;"></div>
 </html>

@@ -14,6 +14,7 @@
     <script src="store/script_shop_loaded.js"></script>
     <script src="store/script_carrito_charger.js"></script>
     <link rel="stylesheet" href="store/style_market.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <div id="contenedor_market">
@@ -26,6 +27,10 @@
             <button onclick="generar_compra();"> realizar compra </button>
         </section>
     </div>
+    
+    
+    
+    
     <div class="contacto">
         <!-- Pie de Pagina -->
         <?php

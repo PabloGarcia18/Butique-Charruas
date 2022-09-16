@@ -78,7 +78,7 @@ nav p{
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
   border-bottom: 22px solid #262424;
-  transition: all ease-in-out .4s;
+  transition: all ease-in-out .1s;
 }
 #cont-cart{
   position: -webkit-sticky;
@@ -93,10 +93,20 @@ nav p{
   height: auto;
   background-color: #262424;
   border-radius: 6px 1px 6px 6px;
-  transition: all ease-in-out .4s;
+  transition: all ease-in-out .1s;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  
 }
 #cont-cart:hover, #tring-cart:hover{
   display: unset;
+}
+
+#cont-cart p 
+{
+    color: whitesmoke;
+    padding: 0 50px 0 50px;
 }
 @media only screen and (max-width: 500px) {
   #carro{
