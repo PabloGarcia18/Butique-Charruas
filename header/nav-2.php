@@ -31,10 +31,12 @@
             }
             
             ?>></i>
-            <i class="fa-solid fa-cart-shopping" id="carro" onclick="redirect('Carro')"></i>
-
+            <div class="cart-content">
+                <i class="fa-solid fa-cart-shopping" id="carro" onclick="redirect('Carro')"></i>   
+                <div id="tring-cart"></div>
+            
+                <div id="cont-cart"></div>
+            </div>
+            
         </nav>
-        <div id="tring-cart" style="display: none; opacity: 0;"></div>
-        
-        <div id="cont-cart" style="display: none; opacity: 0;"></div>
 </html>

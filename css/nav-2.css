@@ -70,7 +70,7 @@ nav p{
   position: -webkit-sticky;
   position: sticky;
   position: fixed;
-  display: unset;
+  display: none;
   top: 53px;
   right: 1vh;
   width: 0;
@@ -80,6 +80,8 @@ nav p{
   border-bottom: 22px solid #262424;
   transition: all ease-in-out .1s;
 }
+
+
 #cont-cart{
   position: -webkit-sticky;
   position: sticky;
@@ -99,10 +101,12 @@ nav p{
   align-items: center;
   
 }
-#cont-cart:hover, #tring-cart:hover{
-  display: unset;
+.cart-content:hover #cont-cart{
+  display: block;
 }
-
+.cart-content:hover #tring-cart{
+  display: block;
+}
 #cont-cart p 
 {
     color: whitesmoke;
