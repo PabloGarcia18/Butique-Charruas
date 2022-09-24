@@ -1,6 +1,6 @@
 <?php
     include("services/conexion.php");
-
+    
     $data = $conn->query("SELECT * FROM productos")->fetchAll();
 
     foreach ($data as $row)
@@ -15,4 +15,6 @@
         <p>PRECIO: " . $row['precio'] . "</p>
         </section>";
     }
+
+
 ?>

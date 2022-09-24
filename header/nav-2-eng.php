@@ -21,6 +21,7 @@
             <img src="./assets/iconos/logo.png" class="nav-logo" onclick="redirect('Home')">
             <p class="nav-contacto" onclick="redirect('contacto')">Contact</p>    
             <p class="nav-nosotros" onclick="redirect('nosotros')">About us</p>
+            <i class="fa fa-search" id="busqueda"></i>
             <i class="far fa-user" id="perfil"
             <?php 
             if(!empty($_SESSION['logeado'])){

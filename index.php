@@ -115,37 +115,33 @@
                 <div> 
 
                 </div>
+                <br>
                 <h1 class="P-Name">Varselle del Uco</h1> <!-- Cargar Nombre de la SQL -->
-                <hr>
                 <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
-                <p class="price">$ 25.99</p> <!-- Cargar Precio de la SQL -->
             </section>
             <section class="vino">
                 <div> 
 
                 </div>
+                <br>
                 <h1 class="P-Name">Vino 2</h1> <!-- Cargar Nombre de la SQL -->
-                <hr>
                 <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
-                <p class="price">$ 35.99</p> <!-- Cargar Precio de la SQL -->
             </section>
             <section class="vino">
                 <div> 
 
                 </div>
+                <br>
                 <h1 class="P-Name">Vino 3</h1> <!-- Cargar Nombre de la SQL -->
-                <hr>
                 <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
-                <p class="price">$ 12.99</p> <!-- Cargar Precio de la SQL -->
             </section>
             <section class="vino">
                 <div> 
 
                 </div>
+                <br>
                 <h1 class="P-Name">Vino 1</h1> <!-- Cargar Nombre de la SQL -->
-                <hr>
                 <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
-                <p class="price">$ 25.99</p> <!-- Cargar Precio de la SQL -->
             </section>
         </section>
     </div>
