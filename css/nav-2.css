@@ -139,10 +139,10 @@ nav p{
     height: 53px;
     right: 0;
   }
-  .nav-contacto, .nav-vinos, .nav-expe, .nav-nosotros, .nav-logo{
+  .nav-contacto, .nav-vinos, .nav-expe, .nav-nosotros, .nav-logo, #carro, #perfil, #busqueda{
     position: relative;
     color: whitesmoke;
-    display: unset;
+    display: none;
     top: 0;
   }
   .nav-contacto{

@@ -128,3 +128,15 @@
 {
     padding: 0 50px 0 50px;
 }
+
+@media only screen and (max-width: 500px){
+    .celda_market, .celda_market2{
+        grid-template-columns: 60vw;
+    }
+    .celda_market section p, .celda_market2 section p{
+        font-size: 1rem;
+    }
+    .celda_market section h1, .celda_market2 section h1{
+        font-size: 1.2rem;
+    }
+}
