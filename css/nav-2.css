@@ -1,7 +1,6 @@
 nav {
     position: -webkit-sticky;
     position: sticky;
-    position: fixed;
     display: inline-flex;
     top: 0;
     background: black;

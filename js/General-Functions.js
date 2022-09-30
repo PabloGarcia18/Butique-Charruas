@@ -1,4 +1,19 @@
 var state = false;
+var state_s = false;
+
+function slowhid(){
+    var searchd = document.getElementById('search-div');
+    
+    searchd.style.display = "none";
+    return true;
+}
+
+function slowop(){
+    var searchd = document.getElementById('search-div');
+    
+    searchd.style.opacity = "1";
+    return true;
+}
 
 function timeda(){
     var tring = document.getElementById('tring-cart');
@@ -26,7 +41,21 @@ function redirect(a){
         login.classList.remove('hidden'); 
         login_exit.classList.remove('hidden'); 
         login.style.left = "25vw";
-    } else if (a === "Carro"){
+    }else if (a === "search"){ 
+        if(state_s === false){
+            //Se activa
+            var search = document.getElementById('search-div');
+            search.style.display = "unset"
+            setTimeout(slowop, 200);
+            state_s = true;
+        }else{
+            //Se desactiva
+            var search = document.getElementById('search-div');
+            search.style.opacity = "0"
+            setTimeout(slowhid, 200);
+            state_s = false;
+        }
+    }else if (a === "Carro"){
         var tring = document.getElementById('tring-cart');
         var cont = document.getElementById('cont-cart');
         if(state === false){

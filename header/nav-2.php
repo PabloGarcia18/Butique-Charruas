@@ -21,7 +21,7 @@
             <img src="./assets/iconos/logo.png" class="nav-logo" onclick="redirect('Home')">
             <p class="nav-contacto" onclick="redirect('contacto')">Contacto</p>    
             <p class="nav-nosotros" onclick="redirect('nosotros')">Nosotros</p>
-            <i class="fa fa-search" id="busqueda"></i>
+            <i class="fa fa-search" id="busqueda" onclick="redirect('search')"></i>
             <i class="far fa-user" id="perfil"
             <?php 
             if(!empty($_SESSION['logeado'])){
@@ -40,4 +40,7 @@
             </div>
             
         </nav>
+        <?php
+        include('services/buscar.php');
+        ?>
 </html>

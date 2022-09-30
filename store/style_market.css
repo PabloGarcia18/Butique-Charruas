@@ -24,6 +24,7 @@
     grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
     grid-gap: 15px;
     justify-content: center;
+    margin-top: 12px;
 }
 .celda_market div{
     position: relative;
@@ -35,6 +36,19 @@
     background-position: center;
     background-position-y: bottom;
     background-repeat: no-repeat;
+}
+.celda_market p{
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Brandon-Grotesque-Italic';
+}
+.celda_market h1{
+    position: relative;
+    font-family: 'Brandon-Grotesque-Italic';
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
 }
 .celda_market section 
 {
