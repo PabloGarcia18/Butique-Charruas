@@ -17,19 +17,8 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <?php
-        /*Carga busqueda*/
-        include('services/buscar.php');
-    ?>
     <div id="contenedor_market">
         <section class="celda_market"></section>
-        <section class="celda_carrito">
-            <span id="carrito_content">
-                <h1>su carrito de compra</h1>
-                <br><br>
-            </span>
-            <button onclick="generar_compra();"> realizar compra </button>
-        </section>
     </div>
     
     

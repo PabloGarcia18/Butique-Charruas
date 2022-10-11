@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <?php
-        /*Carga busqueda*/
-        include('services/buscar.php');
-    ?>
     <div class="contacto">
         <!-- Pie de Pagina -->
         <?php

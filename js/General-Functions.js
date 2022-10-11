@@ -32,9 +32,9 @@ function timedb(){
 
 function redirect(a){
     if (a === "Contact") {
-        location.replace("http://127.0.0.1/Butique-Charruas/contact.php");
+        location.replace("../Butique-Charruas/contact.php");
     } else if (a === "Home") {
-        location.replace("http://127.0.0.1/Butique-Charruas/Index.php");
+        location.replace("../Butique-Charruas/Index.php");
     } else if (a === "Usuario") {
         var login_exit = document.getElementById('login-leave');
         var login = document.querySelector('.login-cont');
@@ -44,15 +44,22 @@ function redirect(a){
     }else if (a === "search"){ 
         if(state_s === false){
             //Se activa
-            var search = document.getElementById('search-div');
-            search.style.display = "unset"
-            setTimeout(slowop, 200);
+            var bkg = document.querySelector('.bkg');
+            var dv_search = document.querySelector('.sdv');
+            var body = document.querySelector('body');
+            body.style.overflow = "hidden";
+            dv_search.style.top = "0";
+            bkg.style.top = "0";
+
             state_s = true;
         }else{
             //Se desactiva
-            var search = document.getElementById('search-div');
-            search.style.opacity = "0"
-            setTimeout(slowhid, 200);
+            var bkg = document.querySelector('.bkg');
+            var dv_search = document.querySelector('.sdv');
+            var body = document.querySelector('body');
+            body.style.overflow = "unset";
+            dv_search.style.top = "-100%";
+            bkg.style.top = "-100%";
             state_s = false;
         }
     }else if (a === "Carro"){
@@ -71,13 +78,13 @@ function redirect(a){
         }
         
     } else if (a === "tienda"){
-        location.replace("http://127.0.0.1/Butique-Charruas/tienda.php");
+        location.replace("../Butique-Charruas/tienda.php");
     } else if (a === "contacto"){
-        location.replace("http://127.0.0.1/Butique-Charruas/contacto.php");
+        location.replace("../Butique-Charruas/contacto.php");
     } else if (a === "experiencias"){
-        location.replace("http://127.0.0.1/Butique-Charruas/experiencias.php");
+        location.replace("../Butique-Charruas/experiencias.php");
     }else if (a === "nosotros"){
-        location.replace("http://127.0.0.1/Butique-Charruas/nosotros.php");
+        location.replace("../Butique-Charruas/nosotros.php");
     }
     
     else if (a === "Scroll"){
