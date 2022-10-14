@@ -101,14 +101,22 @@ nav p{
   right: 1vh;
   width: 25vw;
   min-height: 250px;
-  height: auto;
+  max-height: 500px;
   background-color: #262424;
   border-radius: 6px 1px 6px 6px;
   transition: all ease-in-out .1s;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#cont-cart::-webkit-scrollbar {
+  width: 0.3em;
+}
+ 
+#cont-cart::-webkit-scrollbar-thumb {
+  background-color: #f5f5f59c;
 }
 .cart-content:hover #cont-cart{
   display: block;
@@ -120,6 +128,9 @@ nav p{
 {
     color: whitesmoke;
     padding: 0 50px 0 50px;
+}
+#cont-cart p:hover{
+  text-shadow: none;
 }
 @media only screen and (max-width: 500px) {
   #carro{

@@ -28,7 +28,9 @@
 .celda_market p{
     position: relative;
     text-align: center;
-    margin-top: 20px;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-family: 'Brandon-Grotesque-Italic';
 }
 .celda_market h1{
@@ -45,13 +47,12 @@
     border: solid 1px gray;
     text-align: center;
     font-family: monospace;
-    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: whitesmoke;
     transition: all cubic-bezier(0.39, 0.58, 0.57, 1) .5s;
 }
-.celda_market section:hover{
-    transform: scale(0.99);
+.celda_market a{
+    text-decoration: none;
 }
 .celda_market section p 
 {
