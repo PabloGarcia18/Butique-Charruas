@@ -32,9 +32,9 @@ function timedb(){
 
 function redirect(a){
     if (a === "Contact") {
-        location.replace("../Butique-Charruas/contact.php");
+        location.replace("../contact.php");
     } else if (a === "Home") {
-        location.replace("../Butique-Charruas/Index.php");
+        location.replace("../Index.php");
     } else if (a === "Usuario") {
         var login_exit = document.getElementById('login-leave');
         var login = document.querySelector('.login-cont');
@@ -78,13 +78,13 @@ function redirect(a){
         }
         
     } else if (a === "tienda"){
-        location.replace("../Butique-Charruas/tienda.php");
+        location.replace("../tienda.php");
     } else if (a === "contacto"){
-        location.replace("../Butique-Charruas/contacto.php");
+        location.replace("../contacto.php");
     } else if (a === "experiencias"){
-        location.replace("../Butique-Charruas/experiencias.php");
+        location.replace("../experiencias.php");
     }else if (a === "nosotros"){
-        location.replace("../Butique-Charruas/nosotros.php");
+        location.replace("../nosotros.php");
     }
     
     else if (a === "Scroll"){

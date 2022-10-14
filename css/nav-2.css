@@ -11,6 +11,21 @@ nav {
     justify-content: center;
     transition: all cubic-bezier(0.39, 0.58, 0.57, 1) .7s;
 }
+.count{
+  position: absolute;
+  top: 3px;
+  right: 0.95rem;
+  background-color: #f15671;
+  width: 16px;
+  color: #2e0c0c;
+  font-size: 15px;
+  height: 16px;
+  opacity: 0;
+  font-weight: 1000;
+  text-align: center;
+  line-height: inherit;
+  border-radius: 360px;
+}
 #perfil:hover, #busqueda:hover, #carro:hover, nav p:hover{
   text-shadow: 0 -1px 4px #bf0f36, 0 -2px 10px #a50431, 0 -10px 20px #ff0069, 0 -18px 40px #9a00ff;
   cursor: pointer;

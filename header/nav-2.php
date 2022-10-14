@@ -33,7 +33,9 @@
             
             ?>></i>
             <div class="cart-content">
-                <i class="fa-solid fa-cart-shopping" id="carro" onclick="redirect('Carro')"></i>   
+                <i class="fa-solid fa-cart-shopping" id="carro" onclick="redirect('Carro')"></i>
+                <p class="count"></p>   
+                
                 <div id="tring-cart"></div>
             
                 <div id="cont-cart"></div>
