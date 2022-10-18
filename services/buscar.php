@@ -51,7 +51,7 @@
     transition: all ease-in-out 1s;
 }
 .sdv{
-    position: absolute;
+    position: fixed;
     z-index: 101;
     width: 100%;
     height: 60px;

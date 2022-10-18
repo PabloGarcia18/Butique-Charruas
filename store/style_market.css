@@ -126,6 +126,7 @@
         font-size: 1rem;
     }
     .celda_market section h1, .celda_market2 section h1{
-        font-size: 1.2rem;
+        font-size: 2.1rem;
+        margin: 0;
     }
 }
