@@ -76,4 +76,16 @@
     font-weight: 600;
     text-align: center;
 }
+@media only screen and (max-width: 500px){
+    .celda_market2{
+        grid-template-columns: 60vw;
+    }
+    .celda_market2 section p{
+        font-size: 1rem;
+    }
+    .celda_market2 section h1{
+        font-size: 2.1rem;
+        margin: 0;
+    }
+}
 </style>
