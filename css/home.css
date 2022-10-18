@@ -270,17 +270,18 @@ video{
 }
 @media only screen and (max-width: 500px) {
     .intro-container{
-        top: 0;
         left: 0;
-        height: 95vw;
+        height: 90vw;
+        top: -7px;
     }
     .intro-text{
-        font-size: 3vw;
-        top: 163px;
+        font-size: 1rem;
+        top: 105px;
     }
     .slider-check{
         position: absolute;
-        right:1.5rem;
+        right: 0.8rem;
+        bottom: 20px;
     }
     video{
         height: 50vh;
@@ -306,9 +307,11 @@ video{
     display:grid;
     grid-template-columns:90vw;
     grid-template-rows: auto;
-    grid-gap:20px;
     justify-items: center;
     justify-content: center;
+    }
+    #cont_regiones p:nth-of-type(1){
+        padding-right: 0px;
     }
     .cont_region_unite{
     height: 90vw;
@@ -333,7 +336,8 @@ video{
     font-family: 'Neutra-Text';
     flex-direction: column;
     padding: 0;
-    padding-left: 25px;
+    padding-left: 12px;
+    padding-right: 5px;
     margin: 0;
     text-align: center;
     }

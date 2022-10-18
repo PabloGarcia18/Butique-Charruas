@@ -26,7 +26,7 @@ nav {
   line-height: inherit;
   border-radius: 360px;
 }
-#perfil:hover, #busqueda:hover, #carro:hover, nav p:hover{
+#perfil:hover, #busqueda:hover, #carro:hover, nav p:hover, #movile:hover{
   text-shadow: 0 -1px 4px #bf0f36, 0 -2px 10px #a50431, 0 -10px 20px #ff0069, 0 -18px 40px #9a00ff;
   cursor: pointer;
 }
@@ -147,14 +147,57 @@ nav p{
 #cont-cart p:hover{
   text-shadow: none;
 }
+#movile{
+  display: none;
+  position: absolute;
+  left: 15px;
+  line-height: 53px;
+  color: whitesmoke;
+  font-size: 1.6rem;
+  transition: all ease-in-out 1s;
+  opacity: 0;
+}
+#bkg{
+  display: none;
+}
+/* Poner resolucion 1280x720*/
 @media only screen and (max-width: 500px) {
+  #movile{
+    display: unset;
+    position: absolute;
+    left: 15px;
+    line-height: 53px;
+    color: whitesmoke;
+    font-size: 1.6rem;
+    transition: all ease-in-out 1s;
+    cursor: pointer;
+    opacity: 1;
+  }
   #carro{
     position: absolute;
-    right: 3.5rem;
+    right: 0.8rem;
   }
   #perfil{
     position: absolute;
+    right: 3.5rem;
+  }
+  #busqueda{
     right: 6rem;
+  }
+  #cont-cart{
+    width: 65vw;
+  }
+  #bkgmov{
+    position: absolute;
+    width: 9rem;
+    height: 10rem;
+    background: #24262b;
+    transition: all ease-in-out 0.7s;
+    border-radius: 0 0 15px 0;
+    left: 0;
+    top: 53px;
+    display: unset;
+    opacity: 0;
   }
   nav {
     background: #24262b;
@@ -165,16 +208,54 @@ nav p{
     height: 53px;
     right: 0;
   }
-  .nav-contacto, .nav-vinos, .nav-expe, .nav-nosotros, .nav-logo, #carro, #perfil, #busqueda{
+  nav p{
+    padding: 0;
+    margin: 0; 
+    line-height: 52px;
+    transition: all ease-in-out .5s;
+    cursor: pointer;
+    font-family: 'Prestage';
+    font-size: 1.3rem;
+  }
+  .nav-contacto, .nav-vinos, .nav-expe, .nav-nosotros, .nav-logo{
     position: relative;
     color: whitesmoke;
-    display: none;
-    top: 0;
+  }
+  .nav-logo{
+    left: -5px;
   }
   .nav-contacto{
-    padding-right: 30px;
+    position: absolute;
+    top: 155px;
+    left: 15px;
+    font-size: 1.6rem;
+    z-index: -3;
+    opacity: 0;
+  }
+  .nav-expe{
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    font-size: 1.6rem;
+    z-index: -3;
+    opacity: 0;
+  }
+  .nav-nosotros{
+    top: 120px;
+    left: 15px;
+    font-size: 1.6rem;
+    z-index: -3;
+    opacity: 0;
+    position: absolute;
   }
   .nav-vinos{
-    padding-right: 30px;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    font-size: 1.6rem;
+    z-index: -3;
+    opacity: 0;
   }
-}
+  }
+
+  
