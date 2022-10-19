@@ -48,6 +48,7 @@
         </nav>
         <?php
         include('services/buscar.php');
+        include('services/lang.html');
         ?>
         
 </html>

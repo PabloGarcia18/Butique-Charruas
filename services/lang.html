@@ -1,0 +1,44 @@
+<html>
+    <div class="fondo">
+        <p class="idioma">Idioma</p>
+    </div>
+</html>
+<style>
+    @keyframes fondos{
+        0%{
+            left: -25px;
+        }
+        50%{
+            left: 0px;
+        }
+        100%{
+            left: -25px;
+        }
+    }
+    
+    .fondo{
+        position: fixed;
+        bottom: 90px;
+        width: 65px;
+        height: 32px;
+        z-index: 3;
+        background-color: #221e1e;
+        border-radius: 0 9px 9px 0;
+        cursor: pointer;
+        transition: all ease-in 0.9s;
+        animation-name: fondos;
+        animation: normal fondos 3s infinite;
+    }
+    .fondo:hover{
+        animation: none;
+        
+    }
+    .idioma{
+        color: whitesmoke;
+        font-size: 1rem;
+        margin: 0;
+        line-height: 32px;
+        padding: 0;
+        padding-left: 5px;
+    }
+</style>
