@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-08-2022 a las 22:22:48
+-- Tiempo de generación: 21-10-2022 a las 20:45:11
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -29,8 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clientes` (
   `idusuario` int(11) NOT NULL,
-  `tipousuario` text NOT NULL
+  `tipocliente` text NOT NULL,
+  `ruc` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`idusuario`, `tipocliente`, `ruc`) VALUES
+(1, 'Administrador', 0);
 
 -- --------------------------------------------------------
 
@@ -60,29 +68,30 @@ CREATE TABLE `empresas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `particulares`
---
-
-CREATE TABLE `particulares` (
-  `idusuario` int(11) NOT NULL,
-  `ci` int(11) NOT NULL,
-  `Tipocliente` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `productos`
 --
 
 CREATE TABLE `productos` (
   `idproducto` int(11) NOT NULL,
-  `idvino` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
   `Nombre` text NOT NULL,
   `Descripcion` text NOT NULL,
-  `Stock` int(11) NOT NULL
+  `Stock` int(11) NOT NULL,
+  `imagen` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`idproducto`, `precio`, `Nombre`, `Descripcion`, `Stock`, `imagen`) VALUES
+(0, 252224, 'as21125125', 'as', 56, './assets/productos/ejemplo.png'),
+(1, 500, 'Ejemplo', 'Vino de alta calidad', 0, './assets/productos/ejemplo.png'),
+(2, 252, 'as', 'as', 56, './assets/productos/ejemplo.png'),
+(3, 6126, 'asd2', 'asd', 5125, './assets/productos/ejemplo.png'),
+(4, 25252, '2521as', 'as', 56, './assets/productos/ejemplo.png'),
+(7, 1525125125, '125125', '215125', 1252, 'as'),
+(8, 1525125125, '125125', '215125', 1252, 'as');
 
 -- --------------------------------------------------------
 
@@ -111,6 +120,19 @@ CREATE TABLE `usuarios` (
   `tipousuario` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idusuario`, `mail`, `password`, `nombre`, `apellido`, `direccion`, `tipousuario`) VALUES
+(1, 'Admin', '123', 'Pablo', 'Garcia', '', 'Administrador'),
+(2, 'Pablo', '123', '123', '123', '123', 'Cliente'),
+(3, 'Admin1', '123', '123', '123', '123', 'Administrador'),
+(4, 'a', 'a', '', '', '', 'Cliente'),
+(5, 'b', 'b', '', '', '', 'Cliente'),
+(6, 'as', 'asd', '', '', '', 'Cliente'),
+(7, '123', '123', '', '', '', 'Cliente');
+
 -- --------------------------------------------------------
 
 --
@@ -121,7 +143,7 @@ CREATE TABLE `ventas` (
   `Factura` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
-  `idvino` int(11) NOT NULL,
+  `idproducto` int(11) NOT NULL,
   `idusuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -150,18 +172,10 @@ ALTER TABLE `empresas`
   ADD UNIQUE KEY `rut` (`rut`);
 
 --
--- Indices de la tabla `particulares`
---
-ALTER TABLE `particulares`
-  ADD PRIMARY KEY (`idusuario`),
-  ADD UNIQUE KEY `ci` (`ci`);
-
---
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`idproducto`),
-  ADD UNIQUE KEY `idvino` (`idvino`);
+  ADD PRIMARY KEY (`idproducto`);
 
 --
 -- Indices de la tabla `superadministrador`
@@ -181,24 +195,40 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`Factura`),
-  ADD UNIQUE KEY `idvino` (`idvino`),
-  ADD UNIQUE KEY `idusuario` (`idusuario`);
+  ADD UNIQUE KEY `idusuario` (`idusuario`),
+  ADD UNIQUE KEY `idproducto` (`idproducto`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `productos`
---
-ALTER TABLE `productos`
-  MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `empresas`
+--
+ALTER TABLE `empresas`
+  ADD CONSTRAINT `empresas_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `superadministrador`
+--
+ALTER TABLE `superadministrador`
+  ADD CONSTRAINT `superadministrador_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
