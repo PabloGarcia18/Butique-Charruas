@@ -2,11 +2,20 @@
     include("../services/conexion.php");
     $array_dataset = 
     [
-        "mail" => $_POST["mail"],
+        "mail" => trim($_POST["mail"]," "),
         "pass" => $_POST["reg-pass"],
         "pass1" => $_POST["reg-pass2"],
     ];
 
+    $email = test_input($_POST["mail"]);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        echo "Ingrese un Email Valido";
+        return false;
+    }
+    if ($_POST["reg-pass"] !== $_POST["reg-pass2"]){
+        echo "Las contraseñas no coinciden";
+        return false;
+    }
     //verificar si esta registrado
     $sql = "SELECT mail FROM usuarios WHERE mail ="."'".$array_dataset["mail"]."'";
     
@@ -28,4 +37,12 @@
         $conn->prepare($sql)->execute([$array_dataset["mail"], $array_dataset["pass"], "Cliente"]);
         echo "Registrado";
     }
+
+
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
 ?>

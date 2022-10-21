@@ -1,4 +1,17 @@
 var usuarios_state = false;
+var añadiru = false;
+
+function addusrs(){
+    var agregar = document.getElementById("usuariosadd")
+    if(añadiru === false){    
+        agregar.style.display = "inline-grid";
+        añadiru = true;
+    }else{
+        agregar.style.display = "none";
+
+        añadiru = false;
+    }
+}
 
 function show(){
 
@@ -6,6 +19,7 @@ function show(){
         let adduser = document.getElementById("adduser");
         let removeuser = document.getElementById("removeuser");
         let edituser = document.getElementById("edituser");
+        
         usuarios_state = true;
         adduser.style.display = "unset";
         edituser.style.display = "unset";
@@ -17,8 +31,4 @@ function show(){
         removeuser.style.display = "none";
         
     }
-}
-
-function adduser(){
-    
 }

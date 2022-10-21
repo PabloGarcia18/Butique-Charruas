@@ -28,7 +28,7 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
     ?>
 
     <section class="interaccion">
-        <form action="" class="addusers">
+        <form action="" id="usuariosadd" class="agregaru">
             <input type="text" placeholder="Ingrese un Correo">
             <input type="text" placeholder="Ingrese una Contraseña">
             <input type="text" placeholder="Direccion">
@@ -45,6 +45,18 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
 </body>
 </html>
 <style>
+.agregaru{
+    display: none;
+    position: relative;
+    grid-gap: 5px;
+    justify-items: center;
+    top: 50px;
+    left: calc(50% - (177px / 2));
+}
+.agregaru input{
+    height: 30px;
+    width: 200px;
+}
 .interaccion{
     position: relative;
     top: 35px;

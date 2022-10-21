@@ -12,7 +12,7 @@
                     <li><i class="fa-solid fa-user-gear"></i></li>
                     <span class="tooltiptext">Control de Usuarios</span>
                 </div>
-                <div class="tooltip" id="adduser" style="display: none;" onclick="adduser()">
+                <div class="tooltip" id="adduser" style="display: none;" onclick="addusrs()">
                     <li> <i class="fa-solid fa-user-plus"></i></li>
                     <span class="tooltiptext">Añadir usuarios</span>
                 </div>
