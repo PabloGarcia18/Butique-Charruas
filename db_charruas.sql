@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2022 a las 20:45:11
+-- Tiempo de generación: 21-10-2022 a las 20:53:44
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -51,18 +51,6 @@ CREATE TABLE `cupones` (
   `Vencimiento` date NOT NULL,
   `Codigo` int(15) NOT NULL,
   `Descuento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `empresas`
---
-
-CREATE TABLE `empresas` (
-  `idusuario` int(11) NOT NULL,
-  `rut` int(11) NOT NULL,
-  `Tipocliente` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -165,13 +153,6 @@ ALTER TABLE `cupones`
   ADD UNIQUE KEY `Codigo` (`Codigo`);
 
 --
--- Indices de la tabla `empresas`
---
-ALTER TABLE `empresas`
-  ADD PRIMARY KEY (`idusuario`),
-  ADD UNIQUE KEY `rut` (`rut`);
-
---
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -217,12 +198,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `clientes`
   ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `empresas`
---
-ALTER TABLE `empresas`
-  ADD CONSTRAINT `empresas_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `superadministrador`
