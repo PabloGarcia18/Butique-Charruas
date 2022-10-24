@@ -1,8 +1,14 @@
 <?php
+    
     include("services/conexion.php");
     
-    $data = $conn->query("SELECT * FROM productos WHERE Stock > 0")->fetchAll();
+    if(isset($_POST["filtro_nombre"])){
+        $busqueda = $_POST["filtro_nombre"];
+        $data = $conn ->query("SELECT * FROM productos WHERE Stock > 0 AND Nombre LIKE '%$busqueda%' OR Descripcion LIKE '%$busqueda%'")->fetchAll();
 
+    }else{
+        $data = $conn->query("SELECT * FROM productos WHERE Stock > 0")->fetchAll();
+    }
     foreach ($data as $row)
     {
         echo "<section onclick='carrito_charger(\"" . $row['idproducto'] . "\", \"" . $row['Nombre'] . "\", \"" . $row['precio'] . "\");'>
@@ -13,7 +19,5 @@
         <p>STOCK: " .$row['Stock']. "</p>
         <p>PRECIO: " . $row['precio'] . "</p>
         </section>";
-    }
-
-
+    }   
 ?>

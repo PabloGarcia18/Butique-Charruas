@@ -50,16 +50,6 @@ nav {
   cursor: pointer;
   transition: all ease-in-out .4s;
 }
-#busqueda{
-  position: absolute;
-  right: 5.8rem;
-  line-height: 52px;
-  color: whitesmoke;
-  z-index: 99;
-  font-size: 1.29rem;
-  cursor: pointer;
-  transition: all ease-in-out .4s;
-}
 .nav-logo{
   width: 107px;
   height: 56px;

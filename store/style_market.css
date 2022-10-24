@@ -7,14 +7,14 @@
     grid-template-rows: 80vh;
 }
 
-.celda_market {
+#celda_market {
     display: grid;
     grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
     grid-gap: 15px;
     justify-content: center;
     margin-top: 12px;
 }
-.celda_market div{
+#celda_market div{
     position: relative;
     width: 100%;
     height: 50%;
@@ -25,7 +25,7 @@
     background-position-y: bottom;
     background-repeat: no-repeat;
 }
-.celda_market p{
+#celda_market p{
     position: relative;
     text-align: center;
     margin: 0;
@@ -33,14 +33,14 @@
     margin-bottom: 5px;
     font-family: 'Brandon-Grotesque-Italic';
 }
-.celda_market h1{
+#celda_market h1{
     position: relative;
     font-family: 'Brandon-Grotesque-Italic';
     font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
 }
-.celda_market section 
+#celda_market section 
 {
     height: 450px;
     border-radius: 15px;
@@ -51,10 +51,10 @@
     background-color: whitesmoke;
     transition: all cubic-bezier(0.39, 0.58, 0.57, 1) .5s;
 }
-.celda_market a{
+#celda_market a{
     text-decoration: none;
 }
-.celda_market section p 
+#celda_market section p 
 {
     font-size: 0.7vw;
 }
@@ -119,13 +119,13 @@
 }
 
 @media only screen and (max-width: 500px){
-    .celda_market, .celda_market2{
+    #celda_market, #celda_market2{
         grid-template-columns: 60vw;
     }
-    .celda_market section p, .celda_market2 section p{
+    #celda_market section p, #celda_market2 section p{
         font-size: 1rem;
     }
-    .celda_market section h1, .celda_market2 section h1{
+    #celda_market section h1, #celda_market2 section h1{
         font-size: 2.1rem;
         margin: 0;
     }

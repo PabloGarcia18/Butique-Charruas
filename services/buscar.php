@@ -1,75 +1,41 @@
-    <div id="search-div" class="sdv">
-        <form id="search-form" name="form1" method="get" action="tiendas.php">    
-            <input type="text" class="Search" name="busqueda">
-            <input type="submit" name="enviar" style="position: absolute; left: -9999px"/>
+<html>
+    <div class="sdv">
+        <form id="search-form" method="POST" name="form1" id="buscar_fetch">  
+            <input type="text" class="Search" name="busqueda" onkeypress="buscar_shop()">
+            <button><i class="fa fa-search" id="busqueda"></i></button>
         </form>
-        <i onclick="redirect('search')" id="close" class="fa-solid fa-xmark"></i>
     </div>
-    <section class="bkg">
-    </section>
-    
-    <div id="contenedor_market2">
-        <section class="celda_market2">
-            <?php
-                    if(isset($_GET['enviar'])){
-                        $busqueda = $_GET['busqueda'];
-
-                        $consulta = $conn ->query("SELECT * FROM productos WHERE Stock > 0 AND Nombre LIKE '%$busqueda%' OR Descripcion LIKE '%$busqueda%'");
-                        
-                        foreach ($consulta as $row)
-                        {
-                            echo "<section onclick='carrito_charger(\"" . $row['idproducto'] . "\", \"" . $row['Nombre'] . "\", \"" . $row['precio'] . "\");'>
-                            <div style=\"background-image: url(".$row['imagen'].");\"></div>
-                            <br>
-                            <h1>" . $row['Nombre'] . "</h1>
-                            <p>" . $row['Descripcion'] . "</p>
-                            <p>STOCK: " .$row['Stock']. "</p>
-                            <p>PRECIO: " . $row['precio'] . "</p>
-                            </section>";
-                        }
-                    }    
-                    
-                ?>
-        </section>
-    </div>
+</html>
 <style>
-#close{
-    position: absolute;
-    right: 1.8rem;
-    top: 25px;
-    z-index: 102;
-    transition: all ease-in-out 1s;
-    cursor: pointer;
-    transition: all ease-in-out 1s;
+#busqueda{
+  color: black;
+  font-size: 1.29rem;
+  cursor: pointer;
+  transition: all ease-in-out .4s;
 }
 .Search{
     top: 0;
     width: 100%;
-    height: 60px;
+    height: 40px;
     font-size: 1.5rem;
     font-family: Neutra-Text;
     transition: all ease-in-out 1s;
 }
 .sdv{
     position: fixed;
-    z-index: 101;
+    z-index: 4;
     width: 100%;
-    height: 60px;
-    border-bottom: solid 0.1px #e3a0a0;
-    background-color: #edc4c4;
-    top: -100%;
-    left: 0;
+    height: 35px;
     transition: all ease-in-out 1s;
+    top: 52px;
 }
-.bkg{
-    position: fixed;
-    background-color: #e79696;
-    opacity: 0.8;
-    width: 100%;
-    height: 100%;
-    top: -100%;
-    z-index: 100;
-    left: 0;
-    transition: all ease-in-out 1s;
+.sdv button{
+    position: absolute;
+    top: 7px;
+    right: 0.6rem;
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: none;
 }
 </style>
