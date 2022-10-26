@@ -17,13 +17,13 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <?php   
-        include('services/buscar.php');?>
     <div id="contenedor_market">
         <section id="celda_market">
 
 
         </section>
+        <?php   
+        include('services/buscar.php');?>
     </div>
     
     

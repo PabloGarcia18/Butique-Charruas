@@ -1,8 +1,8 @@
 <html>
     <div class="sdv">
         <form id="search-form" method="POST" name="form1" id="buscar_fetch">  
-            <input type="text" class="Search" name="busqueda" onkeypress="buscar_shop()">
-            <button><i class="fa fa-search" id="busqueda"></i></button>
+            <input type="text" class="Search" name="busqueda" placeholder="Buscar Vino" onkeypress="buscar_shop()"> 
+            <i class="fa fa-search" id="busqueda" onclick="buscar_shop()"></i>
         </form>
     </div>
 </html>
@@ -15,27 +15,26 @@
 }
 .Search{
     top: 0;
-    width: 100%;
-    height: 40px;
+    width: 60%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 1px darkgray;
+    background: none;
+    height: 30px;
     font-size: 1.5rem;
     font-family: Neutra-Text;
     transition: all ease-in-out 1s;
 }
+.Search:focus{
+    outline: none;
+    border-bottom: solid 1px brown;
+}
 .sdv{
-    position: fixed;
+    position: relative;
     z-index: 4;
-    width: 100%;
+    width: 20vw;
     height: 35px;
     transition: all ease-in-out 1s;
-    top: 52px;
-}
-.sdv button{
-    position: absolute;
-    top: 7px;
-    right: 0.6rem;
-    width: 35px;
-    height: 35px;
-    background: transparent;
-    border: none;
 }
 </style>

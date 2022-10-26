@@ -4,7 +4,12 @@
     
     if(isset($_POST["filtro_nombre"])){
         $busqueda = $_POST["filtro_nombre"];
-        $data = $conn ->query("SELECT * FROM productos WHERE Stock > 0 AND Nombre LIKE '%$busqueda%' OR Descripcion LIKE '%$busqueda%'")->fetchAll();
+
+        if(empty($busqueda)){
+            $data = $conn->query("SELECT * FROM productos WHERE Stock > 0")->fetchAll();
+        }else{
+            $data = $conn ->query("SELECT * FROM productos WHERE Stock > 0 AND Nombre LIKE '%$busqueda%' OR Descripcion LIKE '%$busqueda%'")->fetchAll();
+        }
 
     }else{
         $data = $conn->query("SELECT * FROM productos WHERE Stock > 0")->fetchAll();

@@ -1,18 +1,17 @@
 #contenedor_market {
     position: relative;
+    display: inline-flex;
     width: 100%;
     height: 100%;
     margin-top: 73px;
-    grid-template-columns: 80% 20%;
-    grid-template-rows: 80vh;
+    justify-content: space-evenly;
 }
 
 #celda_market {
     display: grid;
-    grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
-    grid-gap: 15px;
+    grid-template-columns: 15vw 15vw 15vw;
+    grid-gap: 25px;
     justify-content: center;
-    margin-top: 12px;
 }
 #celda_market div{
     position: relative;
@@ -43,11 +42,10 @@
 #celda_market section 
 {
     height: 450px;
-    border-radius: 15px;
     border: solid 1px gray;
     text-align: center;
     font-family: monospace;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
     background-color: whitesmoke;
     transition: all cubic-bezier(0.39, 0.58, 0.57, 1) .5s;
 }
@@ -117,7 +115,11 @@
 {
     padding: 0 50px 0 50px;
 }
-
+@media only screen and (max-width: 1280px){
+    #celda_market {
+        grid-template-columns: 20vw 20vw 20vw;
+    }
+}
 @media only screen and (max-width: 500px){
     #celda_market, #celda_market2{
         grid-template-columns: 60vw;
