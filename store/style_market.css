@@ -13,14 +13,14 @@
     width: calc(15vw - 4.2vw + 160px);
     height: 352px;
 }
-.boton{
+#boton{
     position: absolute;
     bottom: 1.2rem;
     left: 0;
     margin-left: 22%;
     border-radius: 15px;
-    border: solid 1.9px #3ac7f5;
-    background: #3ac7f5;
+    border: solid 1.9px black;
+    background: black;
     font-family: Brandon-Grotesque;
     color: white;
     font-size: 1rem;
@@ -82,8 +82,19 @@
 .contenido:hover{
     z-index: 2;
 }
-.contenido button:hover{
+#boton:hover{
     cursor: pointer;
+    background: brown;
+    border: 1.8px solid brown;
+}
+#carting{
+    position: relative;
+    color: whitesmoke;
+    left: 0;
+    transition: all cubic-bezier(0.42, 0, 0.59, 1.15) 1s;
+}
+#carting.activate{
+    left: 80px;
 }
 
 #celda_market {
@@ -162,7 +173,7 @@
     #productos{
         width: 50vw;   
     }
-    .boton{
+    #boton{
         margin-left: 15%;
     }
     .titulos{

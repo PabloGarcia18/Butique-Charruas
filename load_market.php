@@ -23,7 +23,8 @@
                 <h1 class='titulos'>" . $row['Nombre'] . "</h1>
                 <p class='precios'>$" . $row['precio'] . "</p>
                 <p class='desc'>" . $row['Descripcion'] . "</p>
-                <button class=\"boton\" onclick='carrito_charger(\"" . $row['idproducto'] . "\", \"" . $row['Nombre'] . "\", \"" . $row['precio'] . "\");'>Añadir al Carro</button>
+                <button id=\"boton\" onclick='carrito_charger(\"" . $row['idproducto'] . "\", \"" . $row['Nombre'] . "\", \"" . $row['precio'] . "\");'>Añadir al Carro 
+                <i id='carting' class='fa-solid fa-cart-shopping'></i> </button>
             </section>
         </section>";
     }   

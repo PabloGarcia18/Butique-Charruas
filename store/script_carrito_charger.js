@@ -1,9 +1,17 @@
 let mcart = new Map();
 var cant = 0
+
+const boton = document.getElementById('boton');
+
+boton.addEventListiner('click', (e) =>{
+    console.log(e);
+})
+
 function carrito_charger(id, nombre, precio)
 {
     const carrito = document.querySelector("#cont-cart");
     const amount = document.querySelector(".count");
+
     cant = cant + 1;
     
     amount.innerHTML = "" + cant + "";
