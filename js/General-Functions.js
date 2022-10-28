@@ -36,11 +36,19 @@ function redirect(a){
     } else if (a === "Home") {
         location.replace("../Index.php");
     } else if (a === "Usuario") {
+        var x = window.matchMedia("(max-width: 500px)")
         var login_exit = document.getElementById('login-leave');
         var login = document.querySelector('.login-cont');
+        
+        
         login.classList.remove('hidden'); 
         login_exit.classList.remove('hidden'); 
-        login.style.left = "25vw";
+        if (x.matches){
+            login.style.left = "0";
+        } else{
+            login.style.left = "25vw";
+        }
+        
     }else if (a === "search"){ 
         if(state_s === false){
             //Se activa
@@ -92,11 +100,17 @@ function redirect(a){
     }
 }
 function exitlogin(){
-  var login_exit = document.getElementById('login-leave');
-  var login = document.querySelector('.login-cont');
-  
-  login.style.animation = "hideopacity 0.7s";
-  login.style.left = "-100vw";
-  login.classList.add('hidden'); 
-  login_exit.classList.add('hidden');
+    var login_exit = document.getElementById('login-leave');
+    var login = document.querySelector('.login-cont');
+    var x = window.matchMedia("(max-width: 500px)")
+
+
+    if (x.matches){
+        login.style.left = "-700px";
+    }else{
+        login.style.left = "-100vw";
+    }
+    login.style.animation = "hideopacity 0.7s";
+    login.classList.add('hidden'); 
+    login_exit.classList.add('hidden');
 }

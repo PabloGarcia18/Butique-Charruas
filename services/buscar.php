@@ -37,4 +37,20 @@
     height: 35px;
     transition: all ease-in-out 1s;
 }
+@media only screen and (max-width: 500px){
+    #busqueda{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .Search{
+        width: 100%;
+    }
+    .sdv{
+        position: absolute;
+        top: -60px;
+        width: 90vw;
+    }
+
+}
 </style>

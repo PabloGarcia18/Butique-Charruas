@@ -16,13 +16,15 @@
     }
     foreach ($data as $row)
     {
-        echo "<section onclick='carrito_charger(\"" . $row['idproducto'] . "\", \"" . $row['Nombre'] . "\", \"" . $row['precio'] . "\");'>
-        <div style=\"background-image: url(".$row['imagen'].");\"></div>
-        <br>
-        <h1>" . $row['Nombre'] . "</h1>
-        <p>" . $row['Descripcion'] . "</p>
-        <p>STOCK: " .$row['Stock']. "</p>
-        <p>PRECIO: " . $row['precio'] . "</p>
+        echo "
+        <section id='productos'>
+            <div class='vinos' style=\"background-image: url(".$row['imagen'].");\"></div>
+            <section style='position: absolute;' class='contenido'>
+                <h1 class='titulos'>" . $row['Nombre'] . "</h1>
+                <p class='precios'>$" . $row['precio'] . "</p>
+                <p class='desc'>" . $row['Descripcion'] . "</p>
+                <button class=\"boton\" onclick='carrito_charger(\"" . $row['idproducto'] . "\", \"" . $row['Nombre'] . "\", \"" . $row['precio'] . "\");'>Añadir al Carro</button>
+            </section>
         </section>";
     }   
 ?>

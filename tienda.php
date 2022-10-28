@@ -20,7 +20,6 @@
     <div id="contenedor_market">
         <section id="celda_market">
 
-
         </section>
         <?php   
         include('services/buscar.php');?>

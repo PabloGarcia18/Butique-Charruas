@@ -160,18 +160,76 @@
     position: relative;
     top: calc(35% - 1px);
 }
-  /*#login-container{
-    position:relative;
-    display: flex;
-    top: -500px;
-    z-index: 99;
-    width: 500px;
-    border: 2px solid #272530;
-    background: rgb(39, 4, 84);
-    height: 180px;
-    align-content: space-evenly;
-    justify-content: center;
-    align-items: center;
-    transition: all ease-in-out .7s;
+
+@media only screen and (max-width: 500px){
+    .btn-register {
+        top: 45%;
+        position: absolute;
+        left: 10%;
+        width: 100px;
+        height: 30px;
+        border: 2px solid transparent;
+        border: none;
+        background: transparent;
+        border-radius: 13px 0 0 13px;
+        color: whitesmoke;
+        backdrop-filter: blur(1px);
+        backdrop-filter: contrast(0.9);
+        font-size: 1rem;
+        font-family: 'Neutra-Text';
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .btn-login {
+        top: 25%;
+        position: absolute;
+        left: 10%;
+        width: 100px;
+        height: 30px;
+        border: 2px solid transparent;
+        background: white;
+        border-radius: 13px 0 0 13px;
+        color: goldenrod;
+        border-right: 0;
+        font-size: 1rem;
+        font-family: 'Neutra-Text';
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .register-form, .login-form{
+        background-color: white;
+        position: relative;
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        border-radius: 0;
+    }
+    .login-back {
+        position: relative;
+        display: flex;
+        width: 60vw;
+        height: 100%;
+        background-image: url(../assets/fondos/Wine2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 500% 130%;
+        justify-content: center;
+        transition: all ease-in-out 1s;
+        animation: carrusel infinite 18s;
+        border-radius: 0;
+    }
+    .login-cont {
+        position: fixed;
+        display: flex;
+        top: 25%;
+        width: 100vw;
+        left: -700px;
+        height: 75vw;
+        z-index: 101;
+        box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+        align-items: center;
+        justify-content: center;
+        transition: all ease-in-out 0.9s;
+    }
 }
-/*
