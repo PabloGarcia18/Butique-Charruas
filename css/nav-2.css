@@ -14,7 +14,7 @@ nav {
 .count{
   position: absolute;
   top: 3px;
-  right: 0.95rem;
+  right: 0.85rem;
   background-color: #f15671;
   width: 16px;
   color: #2e0c0c;
@@ -22,6 +22,7 @@ nav {
   height: 16px;
   opacity: 0;
   font-weight: 1000;
+  z-index: 100;
   text-align: center;
   line-height: inherit;
   border-radius: 360px;
@@ -129,11 +130,6 @@ nav p{
 .cart-content:hover #tring-cart{
   display: block;
 }
-#cont-cart p 
-{
-    color: whitesmoke;
-    padding: 0 50px 0 50px;
-}
 #cont-cart p:hover{
   text-shadow: none;
 }
@@ -175,7 +171,7 @@ nav p{
     right: 6rem;
   }
   #cont-cart{
-    width: 65vw;
+    width: 95vw;
   }
   #bkgmov{
     position: absolute;

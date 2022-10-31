@@ -69,7 +69,7 @@
                     </span>
                 </div>
                 
-                <div class="cont_region_unite">
+                <div class="cont_region_unite" onclick="redirect('uco')">
                     <span>
                         <h1>Valle de Uco</h1>
                         <hr>
@@ -107,43 +107,14 @@
         <!-- Productos -->
     <div>
         <section class="product-title">
-            <h1>Elecciones Recomendadas</h1>
+            <p>Elecciones Recomendadas</p>
             <hr>
         </section>
-        <section class="products">
-            <section class="vino">
-                <div> 
+        <div id="contenedor_market" style="margin-top: 0;">
+            <section id="home_rec">
 
-                </div>
-                <br>
-                <h1 class="P-Name">Varselle del Uco</h1> <!-- Cargar Nombre de la SQL -->
-                <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
             </section>
-            <section class="vino">
-                <div> 
-
-                </div>
-                <br>
-                <h1 class="P-Name">Vino 2</h1> <!-- Cargar Nombre de la SQL -->
-                <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
-            </section>
-            <section class="vino">
-                <div> 
-
-                </div>
-                <br>
-                <h1 class="P-Name">Vino 3</h1> <!-- Cargar Nombre de la SQL -->
-                <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
-            </section>
-            <section class="vino">
-                <div> 
-
-                </div>
-                <br>
-                <h1 class="P-Name">Vino 1</h1> <!-- Cargar Nombre de la SQL -->
-                <p>Un vino con un potente aroma<br>traido del Valle de Uco</p> <!-- Descripcion SQL -->
-            </section>
-        </section>
+        </div>
     </div>
     <div class="contacto">
         <!-- Pie de Pagina -->
@@ -155,4 +126,43 @@
 </body>
 <script type = "text/javascript" src="js/General-Functions.js"></script>
 <script type = "text/javascript" src="js/slider.js"></script>
+<script>
+    function load_rec()
+        {
+            const market = document.getElementById("home_rec");
+            
+            const formbusqueda = new FormData();
+
+            formbusqueda.set("filtro_nombre", "recomendado");
+            fetch('load_market.php',
+            {
+                method: 'POST',
+                body: formbusqueda
+            })
+            .then(function(response) 
+            {
+                if(response.ok) 
+                {
+                    return response.text();
+                } else 
+                {
+                    throw "Error";
+                }
+            })
+            .then(function(texto) 
+            {
+                market.innerHTML = " ";
+                market.innerHTML = texto;
+            })
+            .catch(function(err) 
+            {
+                console.log(err);
+            });
+        }
+document.addEventListener("DOMContentLoaded", function(event) {
+    load_rec();
+});
+</script>
+<link rel="stylesheet" href="store/style_market.css">
+<script src="store/script_carrito_charger.js"></script>
 </html>

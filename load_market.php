@@ -7,8 +7,10 @@
 
         if(empty($busqueda)){
             $data = $conn->query("SELECT * FROM productos WHERE Stock > 0")->fetchAll();
+        }else if($busqueda === "recomendado"){
+            $data = $conn ->query("SELECT * FROM productos WHERE Stock > 0 AND etiquetas LIKE '%recomendado%'")->fetchAll();
         }else{
-            $data = $conn ->query("SELECT * FROM productos WHERE Stock > 0 AND Nombre LIKE '%$busqueda%' OR Descripcion LIKE '%$busqueda%'")->fetchAll();
+            $data = $conn ->query("SELECT * FROM productos WHERE Stock > 0 AND Nombre LIKE '%$busqueda%' OR etiquetas LIKE '%$busqueda%'")->fetchAll();
         }
 
     }else{
@@ -23,7 +25,13 @@
                 <h1 class='titulos'>" . $row['Nombre'] . "</h1>
                 <p class='precios'>$" . $row['precio'] . "</p>
                 <p class='desc'>" . $row['Descripcion'] . "</p>
-                <button class=\"boton\" onclick='carrito_charger(\"" . $row['idproducto'] . "\", \"" . $row['Nombre'] . "\", \"" . $row['precio'] . "\");'>Añadir al Carro</button>
+                <button id=\"boton\" onclick='carrito_charger(\"" . $row['idproducto'] . "\", \"" . $row['Nombre'] . "\", \"" . $row['precio'] . "\", \"" . $row['imagen'] . "\");'>Añadir al Carro 
+                <i id='carting" . $row['idproducto'] . "' class='fa-solid fa-cart-shopping' style='
+                position: relative;
+                color: whitesmoke;
+                left: 0;
+                transition: all cubic-bezier(0.42, 0, 0.59, 1.15) 1s;
+                '></i> </button>
             </section>
         </section>";
     }   

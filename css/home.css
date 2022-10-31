@@ -1,4 +1,10 @@
 /* Superior */
+#home_rec{
+    display: grid;
+    grid-template-columns: 19vw 19vw 19vw 19vw;
+    grid-gap: 15px;
+    justify-content: center;
+}
 .intro-container{
     position: relative;
     display: inline-flex;
@@ -172,12 +178,17 @@ video{
 }
 .product-title{
     position: relative;
-    text-align: center;
-    font-family: 'Biryani', sans-serif;
-    font-weight: 400;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    text-align: start;
+    font-family: 'Brandon-Grotesque';
+    font-weight: 500;
     margin-bottom: 25px;
-
+}
+.product-title p{
+    position: relative;
+    margin: 0;
+    width: 40vw;
+    left: 10vw;
+    font-size: 1.8rem;
 }
 .product-title hr{
     width: 80%;
@@ -268,7 +279,15 @@ video{
     float: right;
     padding-right: 20px;
 }
+@media only screen and (max-width: 1280px){
+    #home_rec {
+        grid-template-columns: 20vw 20vw 20vw;
+    }
+}
 @media only screen and (max-width: 500px) {
+    #home_rec{
+        grid-template-columns: 100vw;
+    }
     .intro-container{
         left: 0;
         height: 90vw;

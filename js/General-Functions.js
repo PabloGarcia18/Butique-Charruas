@@ -95,8 +95,8 @@ function redirect(a){
         location.replace("../nosotros.php");
     }
     
-    else if (a === "Scroll"){
-        scroll();
+    else if (a === "uco"){
+        location.replace("../uco.php");
     }
 }
 function exitlogin(){
