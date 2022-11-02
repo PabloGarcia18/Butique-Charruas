@@ -1,20 +1,3 @@
-@keyframes carrusel{
-    10%{
-        background-image: url(../assets/fondos/Wine3.jpg);
-    }
-    30%{
-        background-image: url(../assets/fondos/valle.jpg);
-    }
-    55%{
-        background-image: url(../assets/fondos/Wine.jpg);
-    }
-    70%{
-        background-image: url(../assets/fondos/wine3.jpg);
-    }
-    100%{
-        background-image: url(../assets/fondos/wine2.jpg);
-    }
-}
 #cerrar{
     position: absolute;
     z-index: 99;
@@ -51,57 +34,47 @@
     display: flex;
     width: 40vw;
     height: 100%;
-    background-image: url(../assets/fondos/Wine2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 200% 130%;
+    background-image: url(https://365psd.com/images/istock/previews/7895/78952481-wine-seamless-pattern-vector-texture-in-hand-draw-style.jpg);
     border-radius: 15px 0 0 15px;
     justify-content: center;
     transition: all ease-in-out 1s;
-    animation: carrusel infinite 18s;
 }
 .login-form{
     background-color: white;
     position: relative;
-    display: inline-flex;
+    display: grid;
     width: 100%;
     height: 100%;
     border-radius: 0 15px 15px 0;
-    justify-content: center;
+    justify-items: center;
+    align-content: center;
+
 }
 .login-form input{
     height: 29px;
+    margin-bottom: 10px;
 }
-.username-container{
-    position: relative;
-    top: calc(35% - 8px);
-}
-.password-container{
-    position: relative;
-    top: 35%;
-}
+
 .btn-action-login{
-    position: relative;
-    top: 36%;
-    left: 30%;
+    margin-left: 25%;
 }
 .btn-action-register{
-    position: relative;
-    top: 20%;
-    left: 30%;
+    margin-left: 25%;
 }
 
 .register-form{
     background-color: white;
     position: relative;
-    display: inline-flex;
+    display: grid;
     width: 100%;
     height: 100%;
     border-radius: 0 15px 15px 0;
-    justify-content: center;
+    justify-items: center;
+    align-content: center;
 }
 .register-form input{
     height: 29px;
+    margin-bottom: 10px;
 }
 .btn-register{
     top: calc(55vw * 0.2 + 45px);
@@ -148,18 +121,6 @@
     z-index: 100;
     transition: all ease-in-out .7s;
 }
-.reg-username{
-    position: relative;
-    top: calc(35% - 8px);
-}
-.reg-password{
-    position: relative;
-    top: calc(35% - 5px);
-}
-.reg-confirm-pass{
-    position: relative;
-    top: calc(35% - 1px);
-}
 
 @media only screen and (max-width: 500px){
     .btn-register {
@@ -199,7 +160,6 @@
     .register-form, .login-form{
         background-color: white;
         position: relative;
-        display: inline-flex;
         width: 100%;
         height: 100%;
         justify-content: center;
@@ -210,13 +170,9 @@
         display: flex;
         width: 60vw;
         height: 100%;
-        background-image: url(../assets/fondos/Wine2.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 500% 130%;
+        background-image: url(https://365psd.com/images/istock/previews/7895/78952481-wine-seamless-pattern-vector-texture-in-hand-draw-style.jpg);
         justify-content: center;
         transition: all ease-in-out 1s;
-        animation: carrusel infinite 18s;
         border-radius: 0;
     }
     .login-cont {

@@ -1,5 +1,4 @@
 <?php
-    
     include("services/conexion.php");
     
     if(isset($_POST["filtro_nombre"])){

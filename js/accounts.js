@@ -62,7 +62,7 @@ function showreg(){
     let btnlog = document.querySelector('.btn-login');
 
 
-    registro.style.display = "inline-flex";
+    registro.style.display = "grid";
     login.style.display = "none";
     btnreg.style.background = "whitesmoke";
     btnreg.style.color = "goldenrod";
@@ -81,7 +81,7 @@ function showlogin(){
     let btnlog = document.querySelector('.btn-login');
 
 
-    login.style.display = "inline-flex";
+    login.style.display = "grid";
     registro.style.display = "none";
     btnlog.style.background = "whitesmoke";
     btnlog.style.color = "goldenrod";

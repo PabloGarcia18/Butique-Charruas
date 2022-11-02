@@ -5,6 +5,8 @@
         "mail" => trim($_POST["mail"]," "),
         "pass" => $_POST["reg-pass"],
         "pass1" => $_POST["reg-pass2"],
+        "direccion" => $_POST["direccion"],
+        "ci" => $_POST["ci"],
     ];
 
     $email = test_input($_POST["mail"]);
@@ -33,9 +35,27 @@
     }else{
         //$sql = "INSERT INTO usuarios (`mail`, `password`, `tipousuario`) VALUES (".$array_dataset["mail"].", ".$array_dataset["pass"].", 'Cliente');";
        
-        $sql = "INSERT INTO usuarios (mail, password, tipousuario) VALUES (?,?,?)";
-        $conn->prepare($sql)->execute([$array_dataset["mail"], $array_dataset["pass"], "Cliente"]);
-        echo "Registrado";
+        $sql = "INSERT INTO usuarios (mail, password, tipousuario, direccion) VALUES (?,?,?,?)";
+        $conn->prepare($sql)->execute([$array_dataset["mail"], $array_dataset["pass"], "Cliente", $array_dataset["direccion"]]);
+        
+        $f = $array_dataset["mail"];
+        
+        $sql2 = "SELECT idusuario from usuarios where mail = '$f' ";
+        
+        $data2 = $conn->query($sql2);
+        
+        foreach ($data2 as $row){
+            $iduser = $row["idusuario"];
+        }
+        
+        $sql3 = "INSERT INTO clientes (idusuario, tipousuario, ci) VALUES (?,?,?)";
+        if(strlen($array_dataset["ci"]) === 8){
+            $client = "Cliente";
+        }else{
+            $client = "Empresa";
+        }
+        $conn->prepare($sql3)->execute([$iduser, $client, $array_dataset["ci"]]);
+        echo "Registrado con exito";
     }
 
 

@@ -108,10 +108,6 @@ function mostrarcart(){
     document.getElementById("cont-cart").innerHTML += "<button class='checkout' onclick='pagar()'>Realizar Pedido</button>"
 }
 
-function pagar(){
-    fetch('pagar.php');
-}
-
 function eliminarp(id){
     localStorage.removeItem(id);
     mcart.delete(""+ id +"");

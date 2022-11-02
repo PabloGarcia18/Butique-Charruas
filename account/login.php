@@ -56,6 +56,7 @@
                         class="regpass-input"
                         autocomplete="off"
                         placeholder="Ingrese su contraseña"
+                        minlength="8"
                         required
                     />
                 </div>
@@ -66,6 +67,28 @@
                         class="regpass-input"
                         autocomplete="off"
                         placeholder="Confirme su contraseña"
+                        required
+                    />
+                </div>
+                <div class="direccion">
+                    <input 
+                        type="text" 
+                        name="direccion"
+                        class="direccion-input"
+                        autocomplete="off"
+                        placeholder="Escriba su direccion"
+                        required
+                    />
+                </div>
+                <div class="ci">
+                    <input 
+                        type="text" 
+                        name="ci"
+                        class="ci-input"
+                        autocomplete="off"
+                        placeholder="Escriba su CI o Rut"
+                        maxlength="12"
+                        minlength="8"
                         required
                     />
                 </div>
