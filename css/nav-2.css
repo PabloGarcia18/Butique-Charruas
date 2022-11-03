@@ -145,6 +145,7 @@ nav p{
 }
 #bkg{
   display: none;
+  left: -900vw;
 }
 /* Poner resolucion 1280x720*/
 @media only screen and (max-width: 500px) {
@@ -175,15 +176,32 @@ nav p{
   }
   #bkgmov{
     position: absolute;
-    width: 9rem;
-    height: 10rem;
-    background: #24262b;
-    transition: all ease-in-out 0.7s;
-    border-radius: 0 0 15px 0;
-    left: 0;
-    top: 53px;
+    width: 11rem;
+    height: 100vh;
+    background: #191b1f;
+    left: -900vw;
+    transition: all ease-in-out 0.5s;
     display: unset;
     opacity: 0;
+    box-shadow: 9px 1px 6px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 9px 1px 6px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 1px 6px -5px rgba(0,0,0,0.75);
+  }
+  #bkgmov_close{
+    z-index: 4;
+    position: absolute;
+    width: 3rem;
+    height: 3.3rem;
+    background-color: #191b1f;
+    left: -900vw;
+    transition: all ease-in-out 0.5s;
+    opacity: 0;
+  }
+  #bkgmov_close i{
+    color: red;
+    font-size: 2rem;
+    line-height: 53px;
+    margin-left: 0.7rem;
   }
   nav {
     background: #24262b;
@@ -212,23 +230,23 @@ nav p{
   }
   .nav-contacto{
     position: absolute;
-    top: 155px;
-    left: 15px;
+    top: 169px;
+    left: -800px;
     font-size: 1.6rem;
     z-index: -3;
     opacity: 0;
   }
   .nav-expe{
     position: absolute;
-    top: 85px;
-    left: 15px;
+    top: 57px;
+    left: -800px;
     font-size: 1.6rem;
     z-index: -3;
     opacity: 0;
   }
   .nav-nosotros{
-    top: 120px;
-    left: 15px;
+    top: 114px;
+    left: -800px;
     font-size: 1.6rem;
     z-index: -3;
     opacity: 0;
@@ -236,8 +254,8 @@ nav p{
   }
   .nav-vinos{
     position: absolute;
-    top: 50px;
-    left: 15px;
+    top: 5px;
+    left: -800px;
     font-size: 1.6rem;
     z-index: -3;
     opacity: 0;

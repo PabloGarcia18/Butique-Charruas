@@ -40,6 +40,9 @@
             
                 <div id="cont-cart"></div>
             </div>
+            <div id="bkgmov_close">
+                <i onclick="cerrar();" class="fa-solid fa-xmark"></i>
+            </div>
             <div id="bkgmov">
 
 
@@ -50,62 +53,61 @@
 <script>
     var mov = document.getElementById("movile");
 
-    var clicked = false
     function desplegar(){
         var bkg = document.getElementById("bkgmov");
+        var bkg2 = document.getElementById("bkgmov_close");
         let v = document.querySelector(".nav-vinos");
         let n = document.querySelector(".nav-nosotros");
         let c = document.querySelector(".nav-contacto");
         let e = document.querySelector(".nav-expe");
-
-
-
-
-
-        if(clicked == false){
-            bkg.style.opacity = "1";
-            clicked = true;
-            
-            v.style.zIndex = "2";
-            n.style.zIndex = "2";
-            c.style.zIndex = "2";
-            e.style.zIndex = "2";
-
-            v.style.opacity = "1";
-            n.style.opacity = "1";
-            c.style.opacity = "1";
-            e.style.opacity = "1";
-
-
-
-
-            return true;
-        }else{
-            bkg.style.opacity = "0";
-            clicked = false;
-            
-            v.style.opacity = "0";
-            n.style.opacity = "0";
-            c.style.opacity = "0";
-            e.style.opacity = "0";
-            
-            v.style.zIndex = "-3";
-            n.style.zIndex = "-3";
-            c.style.zIndex = "-3";
-            e.style.zIndex = "-3";
-
-            
-
-
-
-            return false;
-        }
+        bkg.style.opacity = "1";
+        bkg.style.left = "0"
+        bkg2.style.opacity = "1";
+        bkg2.style.left = "11rem"
         
-
-
+        v.style.zIndex = "2";
+        n.style.zIndex = "2";
+        c.style.zIndex = "2";
+        e.style.zIndex = "2";
+        v.style.opacity = "1";
+        n.style.opacity = "1";
+        c.style.opacity = "1";
+        e.style.opacity = "1";
         
-        
+        v.style.left = "15px";
+        n.style.left = "15px";
+        c.style.left = "15px";
+        e.style.left = "15px";
+        return true;
     }
+function cerrar(){
+    var bkg2 = document.getElementById("bkgmov_close");
+    var bkg = document.getElementById("bkgmov");
+    let v = document.querySelector(".nav-vinos");
+    let n = document.querySelector(".nav-nosotros");
+    let c = document.querySelector(".nav-contacto");
+    let e = document.querySelector(".nav-expe");
 
+    bkg.style.opacity = "0";
+    bkg2.style.opacity = "0";
+    bkg2.style.left = "-900vw";
+    bkg.style.left = "-900vw";
+    
+    v.style.opacity = "0";
+    n.style.opacity = "0";
+    c.style.opacity = "0";
+    e.style.opacity = "0";
+    
+    v.style.zIndex = "-3";
+    n.style.zIndex = "-3";
+    c.style.zIndex = "-3";
+    e.style.zIndex = "-3";
 
+    v.style.left = "-800px";
+    n.style.left = "-800px";
+    c.style.left = "-800px";
+    e.style.left = "-800px";
+
+    return false;
+}
 </script>
