@@ -29,29 +29,57 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
 
     <section class="interaccion">
         <form action="" id="usuariosadd" class="agregaru">
+            <h1>Agregar Usuario.</h1>
             <input type="text" placeholder="Ingrese un Correo">
             <input type="text" placeholder="Ingrese una Contraseña">
             <input type="text" placeholder="Direccion">
             <input type="text" placeholder="Telefono">
-            <input type="text" placeholder="Ciudad">
+            <input type="text" placeholder="CI/RUT">
 
             <button type="submit">Agregar Usuario</button>  
         </form>
-        <form action="" class="deluser">
-            
+        <div class="eliminar">
+            <form id="buscar-usr" method="POST" name="form1" id="buscar_fetch">  
+                <input type="text" class="Search" name="busqueda" placeholder="Buscar Vino" onkeypress="buscar_usr()"> 
+                <i class="fa fa-search" id="busqueda" onclick="buscar_usr()"></i>
+                
+            </form>
+            <div id="eliminar">
+                    
 
-        </form>
+            </div>
+        </div>
+        
     </section>
 </body>
 </html>
 <style>
+.userinfo:hover{
+    cursor: pointer;
+    background-color: wheat;
+}
+.eliminar{
+    display: none;
+    display: inline-grid;
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+#eliminar{
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+.usuarios{
+    position: relative;
+}
 .agregaru{
     display: none;
     position: relative;
     grid-gap: 5px;
     justify-items: center;
     top: 50px;
-    left: calc(50% - (177px / 2));
+    left: 50px;
 }
 .agregaru input{
     height: 30px;
@@ -61,8 +89,10 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
     position: relative;
     top: 35px;
     left: 135px;
-    width: 90vw;
+    width: 35vw;
     height: 80vh;
+    max-height: 80vh;
     border: 1px solid;
+    background-color: whitesmoke;
 }
 </style>
