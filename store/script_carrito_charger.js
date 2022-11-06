@@ -1,17 +1,18 @@
 let mcart = new Map();
-let cant = localStorage.getItem("cantidad_cart");
+let cant = sessionStorage.getItem("cantidad_cart");
+let total1 = 0;
 
 if(!cant){
     console.log("No hay cantidades")
-    localStorage.setItem("cantidad_cart", 0);
+    sessionStorage.setItem("cantidad_cart", 0);
 }else{
     load();
 }
 
 function load(){
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i)
-        const cat = JSON.parse(localStorage.getItem(key));
+    for (let i = 0; i < sessionStorage.length; i++) {
+        const key = sessionStorage.key(i)
+        const cat = JSON.parse(sessionStorage.getItem(key));
         if(key === "cantidad_cart"){
             console.log("Cantidad OK");
         }else{
@@ -38,7 +39,7 @@ function load(){
 
     console.log(total);
 
-    localStorage.setItem("cantidad_cart", total);
+    sessionStorage.setItem("cantidad_cart", total);
 
     amount.innerHTML = "" + total + "";
     if(total < 1){
@@ -85,38 +86,63 @@ function carrito_charger(id, nombre, precio, img)
         
         mcart.set(id, prod2);
         
-        localStorage.setItem(id, JSON.stringify(prod2))
-        const cat = JSON.parse(localStorage.getItem(id));
+        sessionStorage.setItem(id, JSON.stringify(prod2))
+        const cat = JSON.parse(sessionStorage.getItem(id));
         mcart.set(id, cat);
     }else{
         mcart.set(id, nuevo_producto);
         nuevo_producto.cantidad = parseInt(mcart.get(id).cantidad)+1;
         mcart.set(id, nuevo_producto);
-        localStorage.setItem(id, JSON.stringify(nuevo_producto))
-        const cat = JSON.parse(localStorage.getItem(id));
+        sessionStorage.setItem(id, JSON.stringify(nuevo_producto))
+        const cat = JSON.parse(sessionStorage.getItem(id));
         mcart.set(id, cat);
     }
     load()
 }
 function mostrarcart(){
     document.getElementById("cont-cart").innerHTML = "";
+    document.getElementById("prod").innerHTML = "";
     for(const [k, v] of mcart.entries())
         {
             document.getElementById("cont-cart").innerHTML += 
             "<section class='infop'> <div class='product_img' style=\"background-image: url("+ v.img +")\"></div> <p class='product_title'>" + v.nombre + "</p> <p class='product_cant'>x" + v.cantidad + "</p> <p class='product_price'>$"+ v.precio * v.cantidad +"</p> <i id='eliminarprod' onclick='eliminarp("+v.id+")' class='fas fa-trash' style='color: whitesmoke'></i></section>";
+            document.getElementById("prod").innerHTML += 
+            "<section class='infop'> <div class='product_img' style=\"background-image: url("+ v.img +")\"></div> <p class='product_title'>" + v.nombre + "</p> <p class='product_cant'>x" + v.cantidad + "</p> <p class='product_price'>$"+ v.precio * v.cantidad +"</p> <i id='eliminarprod' onclick='eliminarp("+v.id+")' class='fas fa-trash' style='color: whitesmoke'></i></section>";
+            const fd1 = [];
+            for(const [k, v] of mcart.entries()){
+                fd1.push(v.precio);
+            }
+            total1 = fd1.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+            console.log("Total:"+total1)
         }
     document.getElementById("cont-cart").innerHTML += "<button class='checkout' onclick='pagar()'>Realizar Pedido</button>"
 }
 
 function eliminarp(id){
-    localStorage.removeItem(id);
+    sessionStorage.removeItem(id);
     mcart.delete(""+ id +"");
     load();
-    
 }
 
-
-
+let pasarela_activa = false;
+function pagar(){
+    if(localStorage.getItem("usr_status") === "yes"){
+        var pagar = document.getElementById("p-cont2");
+        var closep = document.getElementById("pagar_close");
+        if(pasarela_activa === false){
+            pagar.style.left = "0";
+            closep.style.left = "40vw";
+            console.log("TRUE");
+            pasarela_activa = true;
+        }else{
+            pagar.style.left = "-900vw";
+            closep.style.left = "-900vw";
+            pasarela_activa = false;
+        }
+    }else{
+        alert("Logeate para poder realizar la compra");
+    }
+}
 
 
 

@@ -1,8 +1,9 @@
 <?php
         /*Carga sql*/
+            include('./header/nav-2.php');
             include('./services/conexion.php');
             include('./account/login.php');
-            include('./header/nav-2.php');
+            
         ?>
 <!DOCTYPE html>
 <html lang="es">

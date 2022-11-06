@@ -1,5 +1,6 @@
 var state = false;
 var state_s = false;
+let activate = false;
 
 function slowhid(){
     var searchd = document.getElementById('search-div');
@@ -35,7 +36,29 @@ function redirect(a){
         location.replace("../contact.php");
     } else if (a === "Home") {
         location.replace("../Index.php");
-    } else if (a === "Usuario") {
+    } 
+    else if (a === "cerrarsesion") {
+        location.replace("../logout.php");
+    }
+    else if (a === "Usuario2") {
+        var x = document.getElementById('userac');
+        
+        if(activate === false){
+            
+            x.style.display = "unset";
+            console.log("true");
+            activate = true;
+        }else{
+            x.style.display = "none";
+            
+            console.log("false");
+            activate = false;
+        }
+        
+
+
+        
+    }else if (a === "Usuario") {
         var x = window.matchMedia("(max-width: 500px)")
         var login_exit = document.getElementById('login-leave');
         var login = document.querySelector('.login-cont');

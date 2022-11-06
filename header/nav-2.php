@@ -1,5 +1,6 @@
 <?php 
-    session_start();    
+session_start();
+include("./pagar.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,10 +26,10 @@
             <i class="far fa-user" id="perfil"
             <?php 
             if(!empty($_SESSION['logeado'])){
-                echo "onclick=\"alert('Usted ya esta logeado');\"";
+                echo "onclick=\"redirect('Usuario2');\"";
             }
             else{
-                echo "onclick=\"redirect('Usuario');\"";
+                echo "onclick=\"redirect('Usuario2');\"";
             }
             
             ?>></i>
@@ -46,6 +47,28 @@
             <div id="bkgmov">
 
 
+            </div>
+            <div id="userac">
+                <ul>
+                    <a <?php 
+                        if(!empty($_SESSION['logeado'])){
+                            echo "href='../logout.php'";
+                        }else{
+                            echo "onclick=\"redirect('Usuario');\"";
+                        }
+                        ?>>
+                        <?php 
+                        if(!empty($_SESSION['logeado'])){
+                            echo "Cerrar Session";
+                        }
+                        else{
+                            echo "Logearse";
+                        }
+                        
+                        ?>
+                    </a>
+                    <li>Idioma</li>
+                </ul>
             </div>
         </nav>
         

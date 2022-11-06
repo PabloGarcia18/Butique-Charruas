@@ -3,6 +3,9 @@
     width: 89px;
     height: 56px;
 }
+.logo:hover{
+    cursor: pointer;
+}
 .iconos{
     text-align: center;
 }
@@ -37,18 +40,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    border-right: solid 2px lightslategray;
-    background-color: rgb(10, 119, 146);
+    background-color: rgb(54 34 34);
     width: 90px;
     height: 100%;
 }
-
-
-
-
-
-
-
 
 /* Tooltip */
 

@@ -47,6 +47,11 @@ function fetch_login(){
     .then(function(texto) 
     {
         //document.getElementById("message").textContent = texto;
+        if(texto === "Credenciales válidas"){
+            localStorage.setItem("usr_status", "yes");
+        }else{
+            localStorage.setItem("usr_status", "no");
+        }
         alert(texto);
     })
     .catch(function(err) 
@@ -69,7 +74,7 @@ function showreg(){
     btnreg.style.backdropfilter = "";
 
     btnlog.style.color = "whitesmoke";
-    btnlog.style.background = "transparent"
+    btnlog.style.background = "#545454"
     btnlog.style.backdropfilter = "blur(1px)";
     btnlog.style.backdropfilter = "contrast(0.9)";
     btnlog.style.bordercolor = "transparent";
@@ -88,7 +93,7 @@ function showlogin(){
     btnlog.style.backdropfilter = "";
 
     btnreg.style.color = "whitesmoke";
-    btnreg.style.background = "transparent"
+    btnreg.style.background = "#545454"
     btnreg.style.backdropfilter = "blur(1px)";
     btnreg.style.backdropfilter = "contrast(0.9)";
     btnreg.style.bordercolor = "transparent";

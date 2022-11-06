@@ -70,6 +70,39 @@
                         required
                     />
                 </div>
+                <div class="nombre">
+                    <input 
+                        type="text" 
+                        name="nombre"
+                        class="name-input"
+                        autocomplete="off"
+                        placeholder="Escriba su Nombre"
+                        required
+                    />
+                </div>
+                <div class="apellido">
+                    <input 
+                        type="text" 
+                        name="apellido"
+                        class="apellido-input"
+                        autocomplete="off"
+                        placeholder="Escriba su Apellido"
+                        required
+                    />
+                </div>
+                <div class="telefono">
+                    <input 
+                        type="tel" 
+                        name="telefono"
+                        class="tel-input"
+                        autocomplete="off"
+                        placeholder="Escriba su Numero de Telefono"
+                        minLength="9" maxLength="9"
+                        
+                        
+                        required
+                    />
+                </div>
                 <div class="direccion">
                     <input 
                         type="text" 
@@ -82,15 +115,15 @@
                 </div>
                 <div class="ci">
                     <input 
-                        type="text" 
+                        type="tel" 
                         name="ci"
                         class="ci-input"
                         autocomplete="off"
                         placeholder="Escriba su CI o Rut"
-                        maxlength="12"
-                        minlength="8"
+                        minLength="9" maxLength="12"
                         required
                     />
+                    
                 </div>
                 <button class="btn-action-login" onclick="fetch_register();">Registrarse</button>
             </form>

@@ -6,7 +6,7 @@
 <body>
     <section class="lateral">
         <div class="iconos">
-            <img src="../assets/iconos/logo.png" class="logo">
+            <img src="../assets/iconos/logo.png" class="logo" onclick="home()">
             <ul>
                 <div class="tooltip" id="adduser" onclick="addusrs()">
                     <li> <i class="fa-solid fa-user-plus"></i></li>
@@ -16,7 +16,7 @@
                     <li><i class="fa-solid fa-user-large-slash"></i></li>
                     <span class="tooltiptext">Eliminar usuarios</span>
                 </div>
-                <div class="tooltip" id="edituser">
+                <div class="tooltip" id="edituser" onclick="editusers()">
                     <li><i class="fa-solid fa-user-pen"></i></li>
                     <span class="tooltiptext">Editar usuarios</span>
                 </div>
@@ -33,6 +33,6 @@
 
 <style>
 html{
-    background-image: url(https://365psd.com/images/istock/previews/7895/78952481-wine-seamless-pattern-vector-texture-in-hand-draw-style.jpg);
+    background-image: url(https://images.unsplash.com/photo-1620301505052-d0ad97309dfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
 }
 </style>

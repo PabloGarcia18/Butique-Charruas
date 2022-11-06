@@ -5,8 +5,8 @@ session_start();
 if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["tipouser"] === "Administrador"){
     echo "Bienvenido";
 }else{
-    //header("Location: https://localhost/Butique-Charruas/");
-    //echo "No eres administrador";
+    header("Location: ../Index.php");
+    echo "No eres administrador";
     
 }
 
@@ -28,24 +28,121 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
     ?>
 
     <section class="interaccion">
-        <form action="" id="usuariosadd" class="agregaru">
+        <form method="POST" id="usuariosadd" class="agregaru">
             <h1>Agregar Usuario.</h1>
-            <input type="text" placeholder="Ingrese un Correo">
-            <input type="text" placeholder="Ingrese una Contraseña">
-            <input type="text" placeholder="Direccion">
-            <input type="text" placeholder="Telefono">
-            <input type="text" placeholder="CI/RUT">
+            <div class="reg-username">
+                    <input 
+                        type="text" 
+                        name="mail"
+                        class="mail-input"
+                        autocomplete="off"
+                        placeholder="Ingrese su mail"
+                        required
+                    />
+                </div>
+                <div class="reg-password">
+                    <input 
+                        type="password" 
+                        name="reg-pass"
+                        class="regpass-input"
+                        autocomplete="off"
+                        placeholder="Ingrese su contraseña"
+                        minlength="8"
+                        required
+                    />
+                </div>
+                <div class="reg-confirm-pass">
+                    <input 
+                        type="password" 
+                        name="reg-pass2"
+                        class="regpass-input"
+                        autocomplete="off"
+                        placeholder="Confirme su contraseña"
+                        required
+                    />
+                </div>
+                <div class="nombre">
+                    <input 
+                        type="text" 
+                        name="nombre"
+                        class="name-input"
+                        autocomplete="off"
+                        placeholder="Escriba su Nombre"
+                        required
+                    />
+                </div>
+                <div class="apellido">
+                    <input 
+                        type="text" 
+                        name="apellido"
+                        class="apellido-input"
+                        autocomplete="off"
+                        placeholder="Escriba su Apellido"
+                        required
+                    />
+                </div>
+                <div class="telefono">
+                    <input 
+                        type="tel" 
+                        name="telefono"
+                        class="tel-input"
+                        autocomplete="off"
+                        placeholder="Escriba su Numero de Telefono"
+                        minLength="9" maxLength="9"
+                        
+                        
+                        required
+                    />
+                </div>
+                <div class="direccion">
+                    <input 
+                        type="text" 
+                        name="direccion"
+                        class="direccion-input"
+                        autocomplete="off"
+                        placeholder="Escriba su direccion"
+                        required
+                    />
+                </div>
+                <div class="ci">
+                    <input 
+                        type="tel" 
+                        name="ci"
+                        class="ci-input"
+                        autocomplete="off"
+                        placeholder="Escriba su CI o Rut"
+                        minLength="9" maxLength="12"
+                        required
+                    />
+                </div>
 
-            <button type="submit">Agregar Usuario</button>  
+            <button onclick="fetch_add();">Agregar Usuario</button>  
         </form>
         <div class="eliminar">
+            <h1>Eliminar Usuario.</h1>    
             <form id="buscar-usr" method="POST" name="form1" id="buscar_fetch">  
-                <input type="text" class="Search" name="busqueda" placeholder="Buscar Vino" onkeypress="buscar_usr()"> 
+                <input type="text" class="Search" name="busqueda" placeholder="Buscar Usuario.." onkeypress="buscar_usr()"> 
                 <i class="fa fa-search" id="busqueda" onclick="buscar_usr()"></i>
                 
             </form>
             <div id="eliminar">
                     
+
+            </div>
+            <div id="accionesusr">
+
+            </div>
+        </div>
+        <div class="editusr">
+            <h1>Editar Usuario.</h1>
+            <form id="buscar-usr2" method="POST" name="form1" id="buscar_fetch2">  
+                <input type="text" class="Search2" name="busqueda" placeholder="Buscar Usuario.." onkeypress="buscar_usr2()"> 
+                <i class="fa fa-search" id="busqueda" onclick="buscar_usr2()"></i>
+            </form>
+            <div id="usuario-edit">
+
+            </div>
+            <div id="acciones-edit">
 
             </div>
         </div>
@@ -54,21 +151,78 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
 </body>
 </html>
 <style>
+#userconfirm{
+    position: absolute;
+    top: 0;
+    right: 5rem;
+    width: 50%;
+    height: 300px;
+    justify-content: end;
+}
+#userconfirm input, select{
+    width: 300px;
+    height: 45px;
+}
+#userconfirm button{
+    width: 120px;
+    height: 30px;
+    position: relative;
+    left: 32%;
+}
+.editusr h1, .eliminar h1{
+    position: absolute;
+    top: -20px;
+    left: 39%;
+}
+#accionesusr, #acciones-edit{
+    position: relative;
+    width: 45%;
+    top: 94px;
+    height: 70vh;
+    left: 34px;
+}
+#accionesusr form, #acciones-edit form{
+    display: inline-grid;
+}
+#accionesusr p, #acciones-edit p{
+    margin-bottom: 2px;
+}
+#buscar-usr, #buscar-usr2{
+    height: 30px;
+    position: absolute;
+    top: 35px;
+    left: 105px;
+}
+.userinfo p{
+    padding-left: 5px ;
+}
 .userinfo:hover{
     cursor: pointer;
-    background-color: wheat;
+    background-color: lightgreen;
 }
-.eliminar{
+.eliminar, .editusr{
     display: none;
-    display: inline-grid;
     position: relative;
-    left: 50px;
-    top: 50px;
-}
-#eliminar{
     width: 100%;
+    height: 100%;
+}
+#eliminar, #usuario-edit{
+    position: relative;
+    width: 50%;
     max-height: 70vh;
     overflow-y: auto;
+    overflow-x: hidden;
+    top: 94px;
+    left: 25px;
+    border-top: groove;
+    border-left: 2px solid #0000009c;
+}
+#eliminar::-webkit-scrollbar, #usuario-edit::-webkit-scrollbar{
+  width: 0.3em;
+}
+ 
+#eliminar::-webkit-scrollbar-thumb, #usuario-edit::-webkit-scrollbar-thumb{
+  background-color: #0000009c;
 }
 .usuarios{
     position: relative;
@@ -89,7 +243,7 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
     position: relative;
     top: 35px;
     left: 135px;
-    width: 35vw;
+    width: 75vw;
     height: 80vh;
     max-height: 80vh;
     border: 1px solid;

@@ -25,7 +25,6 @@
         if($log_validate == true)
         {
             $_SESSION["logeado"] = true;
-            $_SESSION["username"] = $username;
             $_SESSION["tipouser"] = $usuariosql;                 
             
             echo "Credenciales válidas";

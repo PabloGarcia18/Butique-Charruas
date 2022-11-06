@@ -37,32 +37,27 @@
     if($flag_exist){
         echo "El mail Exsiste";
     }else{
-        if(strlen($array_dataset["ci"]) === 8 || strlen($array_dataset["ci"]) === 12){
-            //$sql = "INSERT INTO usuarios (`mail`, `password`, `tipousuario`) VALUES (".$array_dataset["mail"].", ".$array_dataset["pass"].", 'Cliente');";
-            $sql = "INSERT INTO usuarios (mail, password, tipousuario, direccion, nombre, apellido, telefono) VALUES (?,?,?,?,?,?,?)";
-            $conn->prepare($sql)->execute([$array_dataset["mail"], $array_dataset["pass"], "Cliente", $array_dataset["direccion"],$array_dataset["nombre"],$array_dataset["apellido"],$array_dataset["telefono"] ]);
-            
-            $f = $array_dataset["mail"];
-            
-            $sql2 = "SELECT idusuario from usuarios where mail = '$f' ";
-            
-            $data2 = $conn->query($sql2);
-            
-            foreach ($data2 as $row){
-                $iduser = $row["idusuario"];
-            }
-            
-            $sql3 = "INSERT INTO clientes (idusuario, tipousuario, ci) VALUES (?,?,?)";
-            if(strlen($array_dataset["ci"]) === 8){
-                $client = "Cliente";
-            }else{
-                $client = "Empresa";
-            }
-            $conn->prepare($sql3)->execute([$iduser, $client, $array_dataset["ci"]]);
-            echo "Registrado con exito";
-        }else{
-            echo "La Ci/Rut es ivalida";
+        $sql = "INSERT INTO usuarios (mail, password, tipousuario, direccion, nombre, apellido, telefono) VALUES (?,?,?,?,?,?,?)";
+        $conn->prepare($sql)->execute([$array_dataset["mail"], $array_dataset["pass"], "Cliente", $array_dataset["direccion"],$array_dataset["nombre"],$array_dataset["apellido"],$array_dataset["telefono"] ]);
+        
+        $f = $array_dataset["mail"];
+        
+        $sql2 = "SELECT idusuario from usuarios where mail = '$f' ";
+        
+        $data2 = $conn->query($sql2);
+        
+        foreach ($data2 as $row){
+            $iduser = $row["idusuario"];
         }
+        
+        $sql3 = "INSERT INTO clientes (idusuario, tipousuario, ci) VALUES (?,?,?)";
+        if(strlen($array_dataset["ci"]) === 8){
+            $client = "Cliente";
+        }else{
+            $client = "Empresa";
+        }
+        $conn->prepare($sql3)->execute([$iduser, $client, $array_dataset["ci"]]);
+        echo "Registrado con exito";
     }
 
 
