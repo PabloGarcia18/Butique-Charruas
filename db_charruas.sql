@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2022 a las 00:21:40
+-- Tiempo de generación: 07-11-2022 a las 05:57:51
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -69,7 +69,7 @@ CREATE TABLE `productos` (
   `Nombre` text NOT NULL,
   `Descripcion` text NOT NULL,
   `Stock` int(11) NOT NULL,
-  `imagen` varchar(50) NOT NULL,
+  `imagen` varchar(500) NOT NULL,
   `etiquetas` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -80,12 +80,13 @@ CREATE TABLE `productos` (
 INSERT INTO `productos` (`idproducto`, `idvino`, `precio`, `Nombre`, `Descripcion`, `Stock`, `imagen`, `etiquetas`) VALUES
 (1, 1, 900, 'Varselle del Uco', 'Un vino fino  realizado con las mejores cepas de la cosecha del año.', 22, './assets/productos/ejemplo.png', 'recomendado uco'),
 (2, 2, 700, 'Cosecha del año', 'Un vino joven del año, ideal para disfrutar en las comidas familiares.', 2, './assets/productos/ejemplo2.png', 'recomendado'),
-(3, 3, 550, 'Vino Blanco de la Peninsula', 'Un ligero y sabroso vino elaborado en la península ibérica. Ideal para aquellos nuevos en el mundo del vino contando con un bajo nivel de alcohol ', 5, './assets/productos/ejemplo.png', 'recomendado'),
+(3, 3, 550, 'Vino Blanco de la Peninsula', 'Un ligero y sabroso vino elaborado en la península ibérica. Ideal para aquellos nuevos en el mundo del vino contando con un bajo nivel de alcohol ', 4, './assets/productos/ejemplo.png', 'recomendado'),
 (4, 4, 3000, 'Reserva del 86', 'Esta reserva ideal para aquellos entusiastas del vinos y amantes del mismo que desen probar un sabor sin igual.', 5, './assets/productos/ejemplo.png', 'recomendado'),
 (5, 5, 53, 'Lol', '123', 5, './assets/productos/ejemplo.png', 'uco'),
 (6, 6, 53, 'Lol', '123', 5, './assets/productos/ejemplo.png', 'uco'),
 (7, 0, 5125, 'asf', 'asfasf', 5125, './assets/productos/ejemplo.png', 'uco'),
-(8, 8, 51, '125', '125', 125, './assets/productos/ejemplo.png', 'uco');
+(8, 8, 51, '125', '125', 125, './assets/productos/ejemplo.png', 'uco'),
+(29, 0, 50000, 'Reserva del 95', 'Un vino finisimo de alta calidad', 7, '../assets/productos/1667699191457.png', '');
 
 -- --------------------------------------------------------
 
@@ -192,7 +193,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

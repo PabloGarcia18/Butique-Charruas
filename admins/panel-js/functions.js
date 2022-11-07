@@ -2,6 +2,8 @@ var usuarios_state = false;
 var añadiru = false;
 var elimin = false;
 var edot = false;
+var editprod = false;
+
 
 function home(){
     location.replace("../index.php");
@@ -11,23 +13,28 @@ function editusers(){
     var eliminar = document.querySelector(".eliminar");
     var usredit = document.querySelector(".editusr");
     var bkg = document.querySelector(".interaccion")
+    var prod = document.querySelector(".productosadd");
     if(añadiru === false){    
         agregar.style.display = "none";
         bkg.style.width = "75vw";
+        prod.style.display = "none";
         buscar_usr2();
         usredit.style.display = "inline-flex";
         eliminar.style.display = "none";
         añadiru = false;
         elimin = false;
+        editprod = false;
         edot = true;
     }else{
         agregar.style.display = "none";
         eliminar.style.display = "none";
+        prod.style.display = "none";
         usredit.style.display = "none";
         bkg.style.width = "75vw";
         añadiru = false;
         elimin = false;
         edot = false;
+        editprod = false;
     }
 }
 
@@ -36,22 +43,27 @@ function addusrs(){
     var eliminar = document.querySelector(".eliminar")
     var usredit = document.querySelector(".editusr");
     var bkg = document.querySelector(".interaccion")
+    var prod = document.querySelector(".productosadd");
     if(añadiru === false){    
         bkg.style.width = "320px";
         agregar.style.display = "inline-grid";
         eliminar.style.display = "none"
         usredit.style.display = "none";
+        prod.style.display = "none";
         añadiru = true;
         elimin = false;
         edot = false;
+        editprod = false;
     }else{
         bkg.style.width = "75vw";
         agregar.style.display = "none";
         eliminar.style.display = "none"
         usredit.style.display = "none";
+        prod.style.display = "none";
 
         añadiru = false;
         elimin = false;
+        editprod = false;
         edot = false;
     }
 }
@@ -60,25 +72,61 @@ function removeusr(){
     var eliminar = document.querySelector(".eliminar")
     var usredit = document.querySelector(".editusr");
     var bkg = document.querySelector(".interaccion")
+    var prod = document.querySelector(".productosadd");
     if(elimin === false){    
         bkg.style.width = "820px";
         agregar.style.display = "none";
-        buscar_usr();
         eliminar.style.display = "inline-flex"
         usredit.style.display = "none";
+        prod.style.display = "none";
         elimin = true;
+        añadiru = false;
+        edot = false;
+        editprod = false;
+        buscar_usr();
+    }else{
+        agregar.style.display = "none";
+        eliminar.style.display = "none"
+        usredit.style.display = "none";
+        prod.style.display = "none";
+        bkg.style.width = "75vw";
+        elimin = false;
+        añadiru = false;
+        edot = false;
+        editprod = false;
+    }
+}
+function editarstock(){
+    var agregar = document.getElementById("usuariosadd");
+    var prod = document.querySelector(".productosadd");
+    var eliminar = document.querySelector(".eliminar");
+    var usredit = document.querySelector(".editusr");
+    var bkg = document.querySelector(".interaccion");
+    if(editprod === false){    
+        bkg.style.width = "75vw";
+        prod.style.display = "unset";
+        agregar.style.display = "none";
+        eliminar.style.display = "none"
+        usredit.style.display = "none";
+        editprod = true;
+        elimin = false;
         añadiru = false;
         edot = false;
     }else{
         agregar.style.display = "none";
         eliminar.style.display = "none"
+        prod.style.display = "none";
         usredit.style.display = "none";
         bkg.style.width = "75vw";
+        editprod = false;
         elimin = false;
         añadiru = false;
         edot = false;
     }
 }
+
+
+
 function buscar_usr2()
 {   
     const user_b = document.querySelector(".Search2");
@@ -273,6 +321,35 @@ function confirmar(){
     {
         if(response.ok) 
         {
+            return response.text();
+        } else 
+        {
+            throw "Error";
+        }
+    })
+    .then(function(texto) 
+    {
+        //document.getElementById("message").textContent = texto;
+        alert(texto);
+    })
+    .catch(function(err) 
+    {
+        console.log(err);
+    });  
+}
+function fetch_editp(){
+    const data = new FormData(document.getElementById('editproductof'));
+
+    fetch('upload.php', 
+    {
+        method: 'POST',
+        body: data
+    })
+    .then(function(response) 
+    {
+        if(response.ok) 
+        {
+            alert(texto);
             return response.text();
         } else 
         {

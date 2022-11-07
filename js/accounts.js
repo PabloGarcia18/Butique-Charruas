@@ -47,12 +47,14 @@ function fetch_login(){
     .then(function(texto) 
     {
         //document.getElementById("message").textContent = texto;
-        if(texto === "Credenciales válidas"){
+        if(texto === "Empresa" || texto === "Cliente"){
             localStorage.setItem("usr_status", "yes");
+            localStorage.setItem("utype", texto);
+            alert("¡Bienvenido!");
         }else{
             localStorage.setItem("usr_status", "no");
+            alert("Contraseña o Mail Invalido");
         }
-        alert(texto);
     })
     .catch(function(err) 
     {

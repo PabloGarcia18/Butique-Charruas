@@ -19,6 +19,13 @@
             /*escucho coincidencia en usuario y pass*/
             $usuariosql = $row["tipousuario"];
             if(strcmp($row['mail'], $array_dataset["user"])==0 && strcmp($row['password'], $array_dataset["pass"])==0){$log_validate = true;}
+            $x = $row["idusuario"];
+
+        }
+        $f = "SELECT tipousuario FROM clientes WHERE idusuario = $x";
+        $data2 = $conn->query($sql)->fetchAll();
+        foreach($data2 as $row){
+            $client = $row["tipousuario"];
         }
 
         /*estimo resultado de consulta login*/
@@ -26,8 +33,8 @@
         {
             $_SESSION["logeado"] = true;
             $_SESSION["tipouser"] = $usuariosql;                 
-            
-            echo "Credenciales válidas";
+            $_SESSION["tipoclient"] = $client;
+            echo "$client";
         }else 
         {
             echo "Contraseña o Mail Invalido";

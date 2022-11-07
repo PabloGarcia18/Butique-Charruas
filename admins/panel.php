@@ -146,11 +146,40 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
 
             </div>
         </div>
+        <div class="productosadd">
+            <h1>Añadir Productos</h1>
+            <form id="editproductof" method="post" enctype="multipart/form-data" >
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="text" name="desc" placeholder="Descripcion">
+                <input type="text" name="precio" placeholder="Precio">
+                <input type="text" name="stock" placeholder="Stock">
+                <input type="text" name="etiq" placeholder="Etiquetas">
+                <input type="file" name="my_file" /><br /><br />
+                <button type="sumbit" onclick="fetch_editp();">Agregar Producto</button>
+            </form>
+
+        </div>
         
     </section>
 </body>
 </html>
 <style>
+#editproductof{
+    display: grid;
+}
+#editproductof input, button{
+    width: 300px;
+    height: 45px;
+}
+.productosadd{
+    position: absolute;
+    display: none;
+    top: 50px;
+    left: 5rem;
+    width: 50%;
+    height: 300px;
+    justify-content: end;
+}
 #userconfirm{
     position: absolute;
     top: 0;

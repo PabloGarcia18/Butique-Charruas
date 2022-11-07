@@ -113,6 +113,9 @@ function mostrarcart(){
                 fd1.push(v.precio);
             }
             total1 = fd1.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+            if(localStorage.getItem("utype") === "Empresa"){
+                total1 = total1 - (total1 * 0.15);
+            }
             console.log("Total:"+total1)
         }
     document.getElementById("cont-cart").innerHTML += "<button class='checkout' onclick='pagar()'>Realizar Pedido</button>"
