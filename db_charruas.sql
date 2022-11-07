@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2022 a las 05:57:51
+-- Tiempo de generación: 07-11-2022 a las 13:38:18
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,17 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db_charruas`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `administradores`
+--
+
+CREATE TABLE `administradores` (
+  `idusuario` int(11) NOT NULL,
+  `tipousuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -64,7 +75,6 @@ CREATE TABLE `cupones` (
 
 CREATE TABLE `productos` (
   `idproducto` int(11) NOT NULL,
-  `idvino` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
   `Nombre` text NOT NULL,
   `Descripcion` text NOT NULL,
@@ -77,16 +87,16 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`idproducto`, `idvino`, `precio`, `Nombre`, `Descripcion`, `Stock`, `imagen`, `etiquetas`) VALUES
-(1, 1, 900, 'Varselle del Uco', 'Un vino fino  realizado con las mejores cepas de la cosecha del año.', 22, './assets/productos/ejemplo.png', 'recomendado uco'),
-(2, 2, 700, 'Cosecha del año', 'Un vino joven del año, ideal para disfrutar en las comidas familiares.', 2, './assets/productos/ejemplo2.png', 'recomendado'),
-(3, 3, 550, 'Vino Blanco de la Peninsula', 'Un ligero y sabroso vino elaborado en la península ibérica. Ideal para aquellos nuevos en el mundo del vino contando con un bajo nivel de alcohol ', 4, './assets/productos/ejemplo.png', 'recomendado'),
-(4, 4, 3000, 'Reserva del 86', 'Esta reserva ideal para aquellos entusiastas del vinos y amantes del mismo que desen probar un sabor sin igual.', 5, './assets/productos/ejemplo.png', 'recomendado'),
-(5, 5, 53, 'Lol', '123', 5, './assets/productos/ejemplo.png', 'uco'),
-(6, 6, 53, 'Lol', '123', 5, './assets/productos/ejemplo.png', 'uco'),
-(7, 0, 5125, 'asf', 'asfasf', 5125, './assets/productos/ejemplo.png', 'uco'),
-(8, 8, 51, '125', '125', 125, './assets/productos/ejemplo.png', 'uco'),
-(29, 0, 50000, 'Reserva del 95', 'Un vino finisimo de alta calidad', 7, '../assets/productos/1667699191457.png', '');
+INSERT INTO `productos` (`idproducto`, `precio`, `Nombre`, `Descripcion`, `Stock`, `imagen`, `etiquetas`) VALUES
+(1, 900, 'Varselle del Uco', 'Un vino fino  realizado con las mejores cepas de la cosecha del año.', 22, './assets/productos/ejemplo.png', 'recomendado uco'),
+(2, 700, 'Cosecha del año', 'Un vino joven del año, ideal para disfrutar en las comidas familiares.', 2, './assets/productos/ejemplo2.png', 'recomendado'),
+(3, 550, 'Vino Blanco de la Peninsula', 'Un ligero y sabroso vino elaborado en la península ibérica. Ideal para aquellos nuevos en el mundo del vino contando con un bajo nivel de alcohol ', 4, './assets/productos/ejemplo.png', 'recomendado'),
+(4, 3000, 'Reserva del 86', 'Esta reserva ideal para aquellos entusiastas del vinos y amantes del mismo que desen probar un sabor sin igual.', 5, './assets/productos/ejemplo.png', 'recomendado'),
+(5, 53, 'Lol', '123', 5, './assets/productos/ejemplo.png', 'uco'),
+(6, 53, 'Lol', '123', 5, './assets/productos/ejemplo.png', 'uco'),
+(7, 5125, 'asf', 'asfasf', 5125, './assets/productos/ejemplo.png', 'uco'),
+(8, 51, '125', '125', 125, './assets/productos/ejemplo.png', 'uco'),
+(29, 50000, 'Reserva del 95', 'Un vino finisimo de alta calidad', 7, '../assets/productos/1667699191457.png', '');
 
 -- --------------------------------------------------------
 
@@ -136,13 +146,20 @@ CREATE TABLE `ventas` (
   `Factura` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
-  `idvino` int(11) NOT NULL,
+  `idproducto` int(11) NOT NULL,
   `idusuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `administradores`
+--
+ALTER TABLE `administradores`
+  ADD PRIMARY KEY (`idusuario`),
+  ADD UNIQUE KEY `idusuario` (`idusuario`);
 
 --
 -- Indices de la tabla `clientes`
@@ -182,12 +199,18 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `ventas`
   ADD PRIMARY KEY (`Factura`),
-  ADD UNIQUE KEY `idvino` (`idvino`),
+  ADD UNIQUE KEY `idvino` (`idproducto`),
   ADD UNIQUE KEY `idusuario` (`idusuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `administradores`
+--
+ALTER TABLE `administradores`
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
