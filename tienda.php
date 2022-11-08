@@ -36,3 +36,8 @@
         ?>
     </div>
 </body>
+<style>
+    html{
+        background: url(https://www.nicepng.com/png/detail/91-917114_dotted-pattern-png-for-kids-symmetry.png);
+    }
+</style>
