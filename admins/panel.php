@@ -146,33 +146,86 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
 
             </div>
         </div>
-        <div class="productosadd">
-            <h1>Añadir Productos</h1>
-            <form id="editproductof" method="post" enctype="multipart/form-data" >
-                <input type="text" name="nombre" placeholder="Nombre">
-                <input type="text" name="desc" placeholder="Descripcion">
-                <input type="text" name="precio" placeholder="Precio">
-                <input type="text" name="stock" placeholder="Stock">
-                <input type="text" name="etiq" placeholder="Etiquetas">
-                <input type="file" name="my_file" /><br /><br />
-                <button type="sumbit" onclick="fetch_editp();">Agregar Producto</button>
-            </form>
+        <div class="prodedit">
+            <div class="productosadd">
+                <h1>Añadir Productos</h1>
+                <form id="editproductof" method="post" enctype="multipart/form-data" >
+                    <input type="text" name="nombre" placeholder="Nombre">
+                    <input type="text" name="desc" placeholder="Descripcion">
+                    <input type="text" name="precio" placeholder="Precio">
+                    <input type="text" name="stock" placeholder="Stock">
+                    <input type="text" name="etiq" placeholder="Etiquetas">
+                    <input type="file" name="my_file" /><br /><br />
+                    <button type="sumbit" onclick="fetch_editp();">Agregar Producto</button>
+                </form>
+            </div>
+            <div class="buscarprod">
+                <form id="buscar-usr3" method="POST" name="form1" id="buscar_fetch3">  
+                    <input type="text" class="Search3" name="busqueda2" placeholder="Buscar Producto.." onkeypress="buscar_prod()"> 
+                </form>
+                <div id="mostrar_prod">
 
+                </div>
+                <div id="edit_prod">
+
+                </div>
+            </div>
         </div>
         
     </section>
 </body>
 </html>
 <style>
+#editarproductofinal{
+    display: inline-grid;
+    width: 90%;
+    height: 30%;
+}
+.prodedit{
+    display: inline-flex;
+}
+.Search3{
+    width: 50%;
+    height: 30px;
+}
+#buscar-usr3{
+    position: absolute;
+    width: 100%;
+}
+.buscarprod{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#edit_prod{
+    position: relative;
+    width: 50%;
+    right: 0;
+    margin-left: 15px;
+    top: 0;
+}
+#mostrar_prod{
+    position: relative;
+    /* width: 50%; */
+    max-height: 70vh;
+    width: 50%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 70px;
+    /* left: 25px; */
+    border-top: groove;
+    border-left: 2px solid #0000009c;
+}
 #editproductof{
     display: grid;
 }
-#editproductof input, button{
+#editproductof input, #editproductof button{
     width: 300px;
     height: 45px;
 }
 .productosadd{
-    position: absolute;
+    position: relative;
     display: none;
     top: 50px;
     left: 5rem;
@@ -225,7 +278,7 @@ if(isset($_SESSION["logeado"]) && $_SESSION["logeado"] === true && $_SESSION["ti
 .userinfo p{
     padding-left: 5px ;
 }
-.userinfo:hover{
+.userinfo:hover, .info:hover{
     cursor: pointer;
     background-color: lightgreen;
 }
