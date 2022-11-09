@@ -27,7 +27,7 @@
     echo "
         <form method='POST' id='prodeliminar'> 
             <input type='text' disabled placeholder=". "ID:" . $row['idproducto']."></input>
-            <button onclick="."eliminarproducto(".$row['idproducto'].",". $row['idproducto'].")".">Eliminar Producto</button> 
+            <button onclick="."eliminarproducto(".$row['idproducto'].")".">Eliminar Producto</button> 
         </form>
         <form method='POST' id='editarproductofinal'> 
             <input name='id' required style='display: none;' type='text' value='". $row['idproducto']."'>

@@ -360,6 +360,31 @@ function fetch_add(){
     });  
 }
 
+function eliminarproducto(a){
+    const fromeliminarprod = new FormData();
+
+    fromeliminarprod.set("filtrarprod", a);
+
+    fetch('eliminarprod.php',{
+        method: 'POST',
+        body: fromeliminarprod
+    })
+    .then(function(response) 
+    {
+        if(response.ok) 
+        {
+            return response.text();
+        } else 
+        {
+            throw "Error";
+        }
+    })
+    .catch(function(err) 
+    {
+        console.log(err);
+    });
+    
+}
 function eliminarusr(a){
     const fromeliminar = new FormData();
 
