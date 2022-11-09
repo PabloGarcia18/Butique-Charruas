@@ -10,10 +10,13 @@
     <section class="login-cont">
         <i onclick="exitlogin();" id="cerrar" class="fa-solid fa-xmark"></i>
         <section class="login-back">
-            
+            <button class="btn-login" onclick="showlogin();">Logearse</button>
+            <button class="btn-register" onclick="showreg();">Registrarse</button>
         </section>
         <section class="login-form" id="login">
             <form method="POST" enctype="multipart/form-data" id="form_fetch_login">
+                <label>Bienvenido</label>
+                <hr>
                 <div class="username-container">
                     <input
                         type="text" 
@@ -39,6 +42,8 @@
         </section>
         <section class="register-form" style="display: none;" id="register">
             <form method="POST" id="form_fetch_register">
+                <label>Mail y Contraseña</label>
+                <hr>
                 <div class="reg-username">
                     <input 
                         type="text" 
@@ -70,6 +75,8 @@
                         required
                     />
                 </div>
+                <label>Datos</label>
+                <hr>
                 <div class="nombre">
                     <input 
                         type="text" 
@@ -128,9 +135,6 @@
                 <button class="btn-action-login" onclick="fetch_register();">Registrarse</button>
             </form>
         </section>
-        
-        <button class="btn-login" onclick="showlogin();">Logearse</button>
-        <button class="btn-register" onclick="showreg();">Registrarse</button>
     </section>
 </body>
 </html>

@@ -56,10 +56,27 @@
 }
 
 .btn-action-login{
-    margin-left: 25%;
+    height: 30px;
+    margin-left: 20%;
+    font-family: 'Neutra-Text';
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #1aa51a;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.btn-action-login:hover{
+    background-color: #1aa51a;
 }
 .btn-action-register{
-    margin-left: 25%;
+    height: 30px;
+    margin-left: 20%;
+    font-family: 'Neutra-Text';
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #1aa51a;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .register-form{
@@ -79,7 +96,7 @@
 .btn-register{
     top: calc(55vw * 0.2 + 45px);
     position: absolute;
-    left: calc(50vw * 0.45 - 100px);
+    right: 0;
     width: 100px;
     height: 30px;
     border: 2px solid transparent;
@@ -97,7 +114,7 @@
 .btn-login{
     top: calc(55vw * 0.2);
     position: absolute;
-    left: calc(50vw * 0.45 - 100px);
+    right: 0;
     width: 100px;
     height: 30px;
     border: 2px solid transparent;
@@ -121,12 +138,13 @@
     z-index: 100;
     transition: all ease-in-out .7s;
 }
-
+label{
+    font-family: 'Neutra-Text';
+}
 @media only screen and (max-width: 500px){
     .btn-register {
         top: 33%;
         position: absolute;
-        left: 10%;
         width: 100px;
         height: 30px;
         border: 2px solid transparent;
@@ -144,7 +162,6 @@
     .btn-login {
         top: 25%;
         position: absolute;
-        left: 10%;
         width: 100px;
         height: 30px;
         border: 2px solid transparent;
