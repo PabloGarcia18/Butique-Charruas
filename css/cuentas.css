@@ -124,7 +124,7 @@
 
 @media only screen and (max-width: 500px){
     .btn-register {
-        top: 45%;
+        top: 33%;
         position: absolute;
         left: 10%;
         width: 100px;
@@ -178,10 +178,10 @@
     .login-cont {
         position: fixed;
         display: flex;
-        top: 25%;
+        top: 0;
         width: 100vw;
         left: -700px;
-        height: 75vw;
+        height: 100%;
         z-index: 101;
         box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
         align-items: center;
